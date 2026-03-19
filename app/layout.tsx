@@ -15,8 +15,9 @@ const playfair = Playfair_Display({
 });
 
 export const metadata: Metadata = {
-  title: 'Confitería San Luis',
-  description: 'Panadería, restaurante y catering en La Plata.',
+  title: 'Confitería San Luis | Panadería, restaurante y catering en La Plata',
+  description:
+    'Confitería San Luis ofrece panadería artesanal, restaurante, mostrador y catering en la zona de 7 y 63, La Plata.',
 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {

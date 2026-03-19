@@ -12,22 +12,22 @@ html {
 
 body {
   @apply bg-cream text-ink antialiased;
-  background-image: linear-gradient(180deg, rgba(248, 243, 234, 0.96), rgba(248, 243, 234, 0.96)),
-    radial-gradient(circle at top, rgba(216, 183, 170, 0.15), transparent 30%),
-    radial-gradient(circle at bottom, rgba(168, 183, 157, 0.2), transparent 25%);
+  background-image: linear-gradient(180deg, rgba(250, 246, 239, 0.96), rgba(250, 246, 239, 0.98)),
+    radial-gradient(circle at top, rgba(174, 152, 120, 0.12), transparent 35%),
+    radial-gradient(circle at bottom right, rgba(108, 138, 113, 0.14), transparent 25%);
 }
 
 ::selection {
-  @apply bg-rose/40 text-ink;
+  @apply bg-terracotta/30 text-ink;
 }
 
 @layer components {
   .shell {
-    @apply mx-auto w-full max-w-6xl px-4 sm:px-6 lg:px-8;
+    @apply mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8;
   }
 
   .section-card {
-    @apply rounded-[2rem] border border-forest/10 bg-white/80 p-6 shadow-soft backdrop-blur transition duration-300 hover:-translate-y-1 hover:shadow-xl sm:p-8;
+    @apply rounded-[2rem] border border-forest/10 bg-white/82 p-6 shadow-soft backdrop-blur-sm transition duration-300 hover:-translate-y-1 hover:shadow-[0_22px_60px_rgba(58,78,61,0.16)] sm:p-8;
   }
 
   .eyebrow {
