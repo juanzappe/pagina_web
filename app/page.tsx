@@ -24,6 +24,9 @@ export default function HomePage() {
                   alt="San Luis – Confitería & Catering"
                   className="h-20 w-auto sm:h-24 lg:h-28"
                 />
+                <h1 className="mt-5 font-display text-5xl italic leading-[1.1] text-white sm:text-6xl lg:text-7xl">
+                  San Luis
+                </h1>
                 <p className="mt-6 max-w-lg text-lg leading-8 text-white/85 sm:text-xl">
                   {siteInfo.tagline}
                 </p>
@@ -38,12 +41,6 @@ export default function HomePage() {
                     Ver menú
                   </Link>
                   <Link
-                    href="/decoracion"
-                    className="rounded-full border border-white/20 bg-white/10 px-6 py-3 text-center text-sm font-semibold text-white transition duration-300 hover:-translate-y-0.5 hover:bg-white hover:text-ink"
-                  >
-                    Conocer el espacio
-                  </Link>
-                  <Link
                     href="/contacto"
                     className="rounded-full border border-white/20 bg-white/10 px-6 py-3 text-center text-sm font-semibold text-white transition duration-300 hover:-translate-y-0.5 hover:bg-white hover:text-ink"
                   >
@@ -53,12 +50,14 @@ export default function HomePage() {
               </div>
 
               {/* Pilares: Catering, Restaurante, Panadería, Confitería */}
-              <div className="mt-10 grid grid-cols-2 gap-3 sm:grid-cols-4">
+              <div className="mt-10 grid grid-cols-2 gap-3 sm:grid-cols-3">
                 {[
                   { icon: '🍰', label: 'Confitería' },
                   { icon: '🍽️', label: 'Restaurante' },
                   { icon: '🥐', label: 'Panadería' },
                   { icon: '🎉', label: 'Catering' },
+                  { icon: '☕', label: 'Servicios de café' },
+                  { icon: '🏡', label: 'Decoración' },
                 ].map((pillar, index) => (
                   <article
                     key={pillar.label}
