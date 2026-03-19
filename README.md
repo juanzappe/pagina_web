@@ -2,7 +2,7 @@
 
 ## Curación de contenido de Instagram
 
-Se agregó un pipeline para leer una exportación JSON de Instagram, filtrar contenido útil para una web comercial y generar una galería lista para usar.
+Se agregó un pipeline para leer una exportación JSON de Instagram, aprovechar imágenes sueltas dentro de `data/instagram`, filtrar contenido útil para una web comercial y generar una galería lista para usar.
 
 ### Qué hace
 
@@ -27,7 +27,7 @@ npm run instagram:build
 Por defecto el script busca los JSON en:
 
 ```bash
-/data/instagram
+data/instagram
 ```
 
 También se puede sobrescribir con una variable de entorno:
@@ -39,7 +39,9 @@ INSTAGRAM_EXPORT_DIR=/ruta/al/export npm run instagram:build
 ### Archivos generados
 
 - `data/instagram-gallery.generated.json`: manifiesto curado y clasificado.
-- `public/instagram-gallery/`: copia local de imágenes seleccionadas listas para la web.
+- `app/instagram-media/[...path]/route.ts`: ruta que sirve las imágenes directamente desde `data/instagram` sin versionar binarios en la PR.
+
+Si el export JSON no trae todos los archivos referenciados, el script también puede usar imágenes sueltas organizadas en carpetas como `terraza`, `mostrador`, `catering` o `decoracion`.
 
 ### Uso en la web
 

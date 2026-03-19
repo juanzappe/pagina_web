@@ -1,9 +1,8 @@
 import fs from 'node:fs';
 import path from 'node:path';
 
-const SOURCE_DIR = process.env.INSTAGRAM_EXPORT_DIR || '/data/instagram';
+const SOURCE_DIR = process.env.INSTAGRAM_EXPORT_DIR || path.join(process.cwd(), 'data', 'instagram');
 const OUTPUT_JSON = process.env.INSTAGRAM_OUTPUT_JSON || path.join(process.cwd(), 'data', 'instagram-gallery.generated.json');
-const OUTPUT_DIR = process.env.INSTAGRAM_PUBLIC_DIR || path.join(process.cwd(), 'public', 'instagram-gallery');
 const ROOT = process.cwd();
 
 const IMAGE_EXTENSIONS = new Set(['.jpg', '.jpeg', '.png', '.webp', '.gif']);
@@ -20,7 +19,7 @@ const SERVICE_KEYWORDS = [
 ];
 const LOCAL_KEYWORDS = [
   'local', 'terraza', 'mostrador', 'salon', 'salón', 'ambiente', 'barra', 'interior', 'fachada', 'espacio',
-  'esquina', 'confiteria', 'confitería', 'cafeteria', 'cafetería'
+  'esquina', 'confiteria', 'confitería', 'cafeteria', 'cafetería', 'decoracion', 'decoración'
 ];
 const EXCLUDE_KEYWORDS = [
   'promo', 'promoción', 'promocion', '2x1', 'descuento', 'oferta', 'precio', '$', 'ars', 'usd', 'venc',
@@ -154,17 +153,28 @@ function ensureDir(dir) {
   fs.mkdirSync(dir, { recursive: true });
 }
 
-function copyForWeb(absoluteSource, category, timestamp) {
-  if (!fs.existsSync(absoluteSource)) return null;
-  const ext = path.extname(absoluteSource).toLowerCase();
-  const stamp = timestamp || Date.now();
-  const filename = `${category}-${stamp}-${path.basename(absoluteSource).replace(/[^a-zA-Z0-9_.-]/g, '-')}`;
-  const destination = path.join(OUTPUT_DIR, filename);
-  ensureDir(OUTPUT_DIR);
-  if (!fs.existsSync(destination)) {
-    fs.copyFileSync(absoluteSource, destination);
-  }
-  return `/instagram-gallery/${filename}`;
+function titleFromFilename(filePath) {
+  return path.basename(filePath, path.extname(filePath)).replace(/[-_]+/g, ' ').trim();
+}
+
+function extractLooseMediaFiles(files) {
+  return files
+    .filter((file) => IMAGE_EXTENSIONS.has(path.extname(file).toLowerCase()))
+    .map((file) => {
+      const relativePath = path.relative(SOURCE_DIR, file).split(path.sep).join('/');
+      const folderName = path.basename(path.dirname(file));
+      const title = titleFromFilename(file);
+      const context = [relativePath, folderName, title].join(' | ');
+
+      return {
+        sourceFile: file,
+        uri: relativePath,
+        title,
+        caption: '',
+        context,
+        creationTimestamp: Math.floor(fs.statSync(file).mtimeMs / 1000),
+      };
+    });
 }
 
 function resolveAbsoluteMediaPath(candidate) {
@@ -174,6 +184,16 @@ function resolveAbsoluteMediaPath(candidate) {
   const fromJsonFolder = path.resolve(path.dirname(candidate.sourceFile), candidate.uri);
   if (fs.existsSync(fromJsonFolder)) return fromJsonFolder;
   return null;
+}
+
+function buildWebPath(relativeSourcePath) {
+  const encodedPath = relativeSourcePath
+    .split('/')
+    .filter(Boolean)
+    .map((segment) => encodeURIComponent(segment))
+    .join('/');
+
+  return `/instagram-media/${encodedPath}`;
 }
 
 function buildOutput(selectedItems, meta = {}) {
@@ -223,7 +243,6 @@ function buildOutput(selectedItems, meta = {}) {
 
 function main() {
   ensureDir(path.dirname(OUTPUT_JSON));
-  ensureDir(OUTPUT_DIR);
 
   if (!fs.existsSync(SOURCE_DIR)) {
     const empty = buildOutput([], {
@@ -234,12 +253,16 @@ function main() {
     return;
   }
 
-  const files = walk(SOURCE_DIR).filter((file) => file.toLowerCase().endsWith('.json'));
+  const allFiles = walk(SOURCE_DIR);
+  const jsonFiles = allFiles.filter((file) => file.toLowerCase().endsWith('.json'));
   const candidates = [];
-  for (const file of files) {
+  for (const file of jsonFiles) {
     const json = safeReadJson(file);
     if (json) extractMediaCandidates(json, file, candidates);
   }
+
+  const looseMediaCandidates = extractLooseMediaFiles(allFiles);
+  candidates.push(...looseMediaCandidates);
 
   const dedup = new Map();
   for (const candidate of candidates) {
@@ -252,24 +275,30 @@ function main() {
     const decision = classifyItem(candidate);
     if (!decision.include) continue;
     const absolutePath = resolveAbsoluteMediaPath(candidate);
-    const publicPath = absolutePath ? copyForWeb(absolutePath, decision.category, candidate.creationTimestamp) : null;
+    if (!absolutePath) continue;
+
+    const relativeSourcePath = path.relative(SOURCE_DIR, absolutePath).split(path.sep).join('/');
+
     selectedItems.push({
       id: `${decision.category}-${candidate.creationTimestamp || 'na'}-${path.basename(candidate.uri)}`,
       category: decision.category,
       title: candidate.title || path.basename(candidate.uri),
       caption: candidate.caption || '',
       sourceJson: path.relative(ROOT, candidate.sourceFile),
-      sourceMedia: candidate.uri,
+      sourceMedia: relativeSourcePath,
       timestamp: Number(candidate.creationTimestamp) || 0,
       qualityScore: decision.qualityScore,
-      webPath: publicPath,
+      webPath: buildWebPath(relativeSourcePath),
       alt: candidate.caption || candidate.title || `Imagen de ${decision.category}`,
     });
   }
 
   const output = buildOutput(selectedItems, {
     notes: selectedItems.length
-      ? ['Se excluyeron videos, stories sin contexto, promociones con precios y contenido sin señales comerciales.']
+      ? [
+          'Se excluyeron videos, stories sin contexto, promociones con precios y contenido sin señales comerciales.',
+          'La selección final usa únicamente archivos existentes dentro de data/instagram y los sirve mediante una ruta web sin copiar binarios a public.'
+        ]
       : ['No se encontraron assets seleccionables en la exportación disponible.'],
   });
 
