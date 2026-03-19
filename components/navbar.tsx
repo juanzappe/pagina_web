@@ -11,10 +11,12 @@ export function Navbar() {
     <header className="sticky top-0 z-50 border-b border-forest/10 bg-cream/85 backdrop-blur-xl">
       <div className="shell flex items-center justify-between gap-4 py-3 sm:py-4">
         <Link href="/" className="group min-w-0">
-          <p className="truncate font-display text-2xl text-forest transition group-hover:text-terracotta sm:text-3xl">
-            {siteInfo.name}
-          </p>
-          <p className="truncate text-xs text-forest/70 sm:text-sm">Cosas ricas y más</p>
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src="/logo-san-luis.svg"
+            alt="San Luis – Confitería & Catering"
+            className="h-10 w-auto transition group-hover:opacity-80 sm:h-12"
+          />
         </Link>
 
         <div className="hidden items-center gap-2 lg:flex">
