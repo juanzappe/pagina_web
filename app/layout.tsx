@@ -1,29 +1,30 @@
 import type { Metadata } from 'next';
-import { Manrope, Playfair_Display } from 'next/font/google';
+import { DM_Sans, Cormorant_Garamond } from 'next/font/google';
 import './globals.css';
 import { Navbar } from '@/components/navbar';
 import { Footer } from '@/components/footer';
 
-const manrope = Manrope({
+const dmSans = DM_Sans({
   subsets: ['latin'],
   variable: '--font-manrope',
 });
 
-const playfair = Playfair_Display({
+const cormorant = Cormorant_Garamond({
   subsets: ['latin'],
+  weight: ['400', '500', '600', '700'],
   variable: '--font-playfair',
 });
 
 export const metadata: Metadata = {
-  title: 'Confitería San Luis | Panadería, restaurante y catering en La Plata',
+  title: 'San Luis · Cosas Ricas y Más | Confitería en La Plata',
   description:
-    'Confitería San Luis ofrece panadería artesanal, restaurante, mostrador y catering en la zona de 7 y 63, La Plata.',
+    'Confitería San Luis: cosas ricas y más. Panadería artesanal, restaurante, mostrador, catering y objetos de diseño en 7 y 63, La Plata.',
 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="es">
-      <body className={`${manrope.variable} ${playfair.variable}`}>
+      <body className={`${dmSans.variable} ${cormorant.variable}`}>
         <Navbar />
         <main>{children}</main>
         <Footer />

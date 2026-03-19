@@ -12,14 +12,14 @@ html {
 
 body {
   @apply bg-cream text-ink antialiased;
-  background-image: linear-gradient(180deg, rgba(250, 246, 239, 0.96), rgba(250, 246, 239, 0.98)),
-    radial-gradient(circle at top, rgba(174, 152, 120, 0.12), transparent 35%),
-    radial-gradient(circle at bottom right, rgba(108, 138, 113, 0.14), transparent 25%);
+  background-image: linear-gradient(180deg, rgba(248, 241, 232, 0.96), rgba(248, 241, 232, 0.98)),
+    radial-gradient(circle at top, rgba(212, 149, 43, 0.08), transparent 35%),
+    radial-gradient(circle at bottom right, rgba(126, 200, 200, 0.10), transparent 25%);
 }
 
 ::selection {
-  background-color: rgb(184 115 82 / 0.3);
-  color: #243127;
+  background-color: rgb(212 149 43 / 0.3);
+  color: #2A1F1A;
 }
 
 @layer components {
@@ -31,12 +31,12 @@ body {
     @apply border border-forest/10 p-6 backdrop-blur-sm transition duration-300 sm:p-8;
     border-radius: 2rem;
     background-color: rgb(255 255 255 / 0.82);
-    box-shadow: 0 20px 55px rgba(63, 82, 67, 0.12);
+    box-shadow: 0 20px 55px rgba(74, 100, 128, 0.10);
   }
 
   .section-card:hover {
     transform: translateY(-0.25rem);
-    box-shadow: 0 22px 60px rgba(58, 78, 61, 0.16);
+    box-shadow: 0 22px 60px rgba(74, 100, 128, 0.15);
   }
 
   .eyebrow {

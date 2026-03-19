@@ -1,10 +1,10 @@
 export const siteInfo = {
-  name: 'Confitería San Luis',
-  tagline: 'Panadería, restaurante y catering en La Plata',
+  name: 'San Luis',
+  tagline: 'Cosas ricas y más · Confitería en La Plata',
   description:
-    'Desde hace más de 30 años acompañamos desayunos, almuerzos, meriendas y celebraciones con cocina casera, pastelería artesanal y atención cercana en la zona de 7 y 63.',
+    'Desde hace más de 30 años acompañamos desayunos, almuerzos, meriendas y celebraciones con cocina casera, pastelería artesanal, cerámica pintada a mano y atención cercana en la zona de 7 y 63.',
   shortDescription:
-    'Un clásico gastronómico platense para comer rico, comprar algo fresco en el mostrador o resolver un evento con servicio profesional.',
+    'Un clásico platense para comer rico, llevarte algo del mostrador, encontrar objetos artesanales para tu hogar o resolver un evento con servicio profesional.',
   address: 'Zona 7 y 63, La Plata, Buenos Aires',
   neighborhood: 'Ubicados en una esquina tradicional de La Plata, con salón, terraza y mostrador para llevar.',
   whatsapp: '+54 9 221 555 1234',
@@ -79,17 +79,17 @@ export const aboutFeatures = [
   {
     title: 'Tradición platense',
     description:
-      'San Luis nació como un punto de encuentro barrial y hoy sigue siendo una referencia para quienes buscan calidad constante y trato cercano.',
+      'San Luis nació como un punto de encuentro barrial y hoy sigue siendo una referencia para quienes buscan calidad constante, cerámica artesanal y trato cercano.',
   },
   {
-    title: 'Cocina con identidad',
+    title: 'Cocina y objetos con identidad',
     description:
-      'La carta combina clásicos de confitería, platos de restaurante y opciones rápidas con foco en sabor, presentación y porciones equilibradas.',
+      'La carta combina clásicos de confitería con platos de restaurante, y el espacio suma vajilla pintada a mano, textiles artesanales y objetos para el hogar.',
   },
   {
-    title: 'Pensado para el día a día',
+    title: 'Cosas ricas y más',
     description:
-      'Desayunos tempranos, almuerzos ejecutivos, meriendas, viandas y catering: resolvemos distintos momentos con una misma vara de calidad.',
+      'Desayunos, almuerzos, meriendas, catering y además un rincón con cosas lindas para tu hogar: tazas, platos y cerámicas que podés llevar.',
   },
 ];
 

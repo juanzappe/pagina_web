@@ -9,25 +9,25 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        forest: '#49614F',
-        sage: '#93A486',
-        cream: '#FAF6EF',
-        sand: '#E7D5BA',
-        terracotta: '#B87352',
-        ink: '#243127',
+        forest: '#4A6480',
+        sage: '#7EC8C8',
+        cream: '#F8F1E8',
+        sand: '#F2D4C4',
+        terracotta: '#D4952B',
+        ink: '#2A1F1A',
       },
       fontFamily: {
         sans: ['var(--font-manrope)', 'system-ui', 'sans-serif'],
         display: ['var(--font-playfair)', 'serif'],
       },
       boxShadow: {
-        soft: '0 20px 55px rgba(63, 82, 67, 0.12)',
+        soft: '0 20px 55px rgba(74, 100, 128, 0.10)',
       },
       backgroundImage: {
         floral:
-          'radial-gradient(circle at top left, rgba(184, 115, 82, 0.18), transparent 35%), radial-gradient(circle at bottom right, rgba(147, 164, 134, 0.24), transparent 30%)',
+          'radial-gradient(circle at top left, rgba(212, 149, 43, 0.14), transparent 35%), radial-gradient(circle at bottom right, rgba(126, 200, 200, 0.18), transparent 30%)',
         'floral-strong':
-          'radial-gradient(circle at top left, rgba(184, 115, 82, 0.22), transparent 28%), radial-gradient(circle at bottom right, rgba(147, 164, 134, 0.28), transparent 32%), linear-gradient(180deg, rgba(255,255,255,0.86), rgba(255,255,255,0.78))',
+          'radial-gradient(circle at top left, rgba(212, 149, 43, 0.16), transparent 28%), radial-gradient(circle at bottom right, rgba(126, 200, 200, 0.20), transparent 32%), linear-gradient(180deg, rgba(255,255,255,0.88), rgba(248,241,232,0.82))',
       },
       keyframes: {
         fadeUp: {
