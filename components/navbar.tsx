@@ -14,7 +14,7 @@ export function Navbar() {
           <p className="truncate font-display text-2xl text-forest transition group-hover:text-terracotta sm:text-3xl">
             {siteInfo.name}
           </p>
-          <p className="truncate text-xs text-forest/70 sm:text-sm">Panadería · restaurante · catering</p>
+          <p className="truncate text-xs text-forest/70 sm:text-sm">Cosas ricas y más</p>
         </Link>
 
         <div className="hidden items-center gap-2 lg:flex">

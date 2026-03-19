@@ -14,16 +14,16 @@ export default function HomePage() {
   return (
     <>
       <section className="shell pt-6 sm:pt-10">
-        <div className="relative overflow-hidden rounded-[2rem] bg-ink text-white shadow-soft">
+        <div className="relative overflow-hidden rounded-[2rem] bg-forest text-white shadow-soft">
           <div
             className="absolute inset-0 bg-cover bg-center"
             style={{
-              backgroundImage: `linear-gradient(90deg, rgba(31, 42, 35, 0.88) 0%, rgba(31, 42, 35, 0.66) 45%, rgba(31, 42, 35, 0.35) 100%), url(${fallbackHeroImage || siteInfo.heroImage})`,
+              backgroundImage: `linear-gradient(90deg, rgba(42, 31, 26, 0.85) 0%, rgba(74, 100, 128, 0.70) 45%, rgba(74, 100, 128, 0.40) 100%), url(${fallbackHeroImage || siteInfo.heroImage})`,
             }}
           />
           <div className="relative grid gap-10 px-6 py-14 sm:px-10 sm:py-20 lg:grid-cols-[1.05fr_0.95fr] lg:items-end">
             <div className="animate-fadeUp">
-              <p className="eyebrow !text-sand">Confitería tradicional en La Plata</p>
+              <p className="eyebrow !text-sand">Cosas ricas y más · La Plata</p>
               <h1 className="mt-4 max-w-3xl font-display text-5xl leading-tight sm:text-6xl">{siteInfo.name}</h1>
               <p className="mt-5 max-w-2xl text-lg leading-8 text-white/85 sm:text-xl">{siteInfo.tagline}</p>
               <p className="mt-4 max-w-2xl text-base leading-7 text-white/75">{siteInfo.description}</p>
@@ -135,6 +135,44 @@ export default function HomePage() {
             Ver la carta completa →
           </Link>
         </div>
+      </section>
+
+      <section className="shell mt-14">
+        <SectionHeading
+          eyebrow="Nuestro espacio"
+          title="Un lugar con identidad propia para cada momento"
+          description="Cerámica artesanal, ambientación cálida y rincones diseñados para que cada visita sea una experiencia."
+        />
+        <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+          {[
+            { src: '/instagram-media/decoracion/17848302642535331.jpg', label: 'Ambiente' },
+            { src: '/instagram-media/decoracion/17926472615846851.jpg', label: 'Detalles' },
+            { src: '/instagram-media/terraza/18079865375079935.jpg', label: 'Terraza' },
+            { src: '/instagram-media/decoracion/18054635804449453.jpg', label: 'Rincones' },
+          ].map((photo, index) => (
+            <article
+              key={photo.src}
+              className="group animate-fadeUp overflow-hidden rounded-[1.75rem] border border-forest/10 bg-white/80 shadow-soft"
+              style={{ animationDelay: `${index * 100}ms` }}
+            >
+              <div className="relative aspect-[4/3] bg-sand/40">
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src={photo.src}
+                  alt={photo.label}
+                  className="h-full w-full object-cover transition duration-500 group-hover:scale-[1.03]"
+                  loading="lazy"
+                />
+              </div>
+              <div className="p-4 text-center">
+                <p className="text-sm font-semibold text-forest">{photo.label}</p>
+              </div>
+            </article>
+          ))}
+        </div>
+        <Link href="/decoracion" className="mt-8 inline-flex text-sm font-semibold text-terracotta transition hover:text-forest">
+          Ver todo el espacio →
+        </Link>
       </section>
 
       <InstagramGallery />
