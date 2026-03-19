@@ -1,28 +1,35 @@
 import Link from 'next/link';
 import {
   aboutFeatures,
-  heroStats,
   serviceHighlights,
   siteInfo,
   terrazaCategories,
 } from '@/data/site';
-import { InstagramGallery } from '@/components/instagram-gallery';
 import { SectionHeading } from '@/components/section-heading';
 
 export default function HomePage() {
   return (
     <>
-      {/* Hero: split layout – texto + foto del edificio */}
+      {/* Hero: split layout – logo + texto + foto del edificio */}
       <section className="shell pt-6 sm:pt-10">
         <div className="overflow-hidden rounded-[2rem] shadow-soft">
           <div className="grid lg:grid-cols-[1fr_1fr]">
             {/* Lado izquierdo: contenido */}
             <div className="flex flex-col justify-center bg-forest px-6 py-12 text-white sm:px-10 sm:py-16 lg:py-20">
               <div className="animate-fadeUp">
-                <p className="eyebrow !text-sand/90">Cosas ricas y más · Av. 7 esq. 63, La Plata</p>
-                <h1 className="mt-5 font-display text-5xl leading-[1.1] sm:text-6xl lg:text-7xl">{siteInfo.name}</h1>
-                <p className="mt-2 font-display text-xl text-sand sm:text-2xl">Confitería</p>
-                <p className="mt-6 max-w-lg text-base leading-7 text-white/80">{siteInfo.description}</p>
+                {/* Logo arriba a la izquierda */}
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src="/logo-san-luis.svg"
+                  alt="San Luis – Confitería & Catering"
+                  className="h-20 w-auto sm:h-24 lg:h-28"
+                />
+                <p className="mt-6 max-w-lg text-lg leading-8 text-white/85 sm:text-xl">
+                  {siteInfo.tagline}
+                </p>
+                <p className="mt-4 max-w-lg text-base leading-7 text-white/75 sm:text-lg">
+                  {siteInfo.description}
+                </p>
                 <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
                   <Link
                     href="/la-terraza"
@@ -45,16 +52,21 @@ export default function HomePage() {
                 </div>
               </div>
 
-              {/* Stats debajo del texto */}
-              <div className="mt-10 grid gap-3 sm:grid-cols-3">
-                {heroStats.map((item, index) => (
+              {/* Pilares: Catering, Restaurante, Panadería, Confitería */}
+              <div className="mt-10 grid grid-cols-2 gap-3 sm:grid-cols-4">
+                {[
+                  { icon: '🍰', label: 'Confitería' },
+                  { icon: '🍽️', label: 'Restaurante' },
+                  { icon: '🥐', label: 'Panadería' },
+                  { icon: '🎉', label: 'Catering' },
+                ].map((pillar, index) => (
                   <article
-                    key={item.label}
-                    className="animate-fadeUp rounded-[1.25rem] border border-white/10 bg-white/8 p-4"
-                    style={{ animationDelay: `${index * 120}ms` }}
+                    key={pillar.label}
+                    className="animate-fadeUp rounded-[1.25rem] border border-white/10 bg-white/8 p-4 text-center"
+                    style={{ animationDelay: `${index * 100}ms` }}
                   >
-                    <p className="font-display text-2xl text-sand">{item.value}</p>
-                    <p className="mt-1 text-xs leading-5 text-white/65">{item.label}</p>
+                    <p className="text-2xl">{pillar.icon}</p>
+                    <p className="mt-2 text-sm font-semibold text-sand">{pillar.label}</p>
                   </article>
                 ))}
               </div>
@@ -73,10 +85,11 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* Qué ofrecemos */}
       <section className="shell mt-14">
         <SectionHeading
           eyebrow="Qué ofrecemos"
-          title="Cuatro formas de vivir San Luis según tu momento del día"
+          title="Todo lo que necesitás en un solo lugar"
           description="Desde un desayuno rápido hasta un evento completo, la propuesta está pensada para que la experiencia se vea profesional, cercana y consistente en cada servicio."
         />
         <div className="mt-8 grid gap-6 md:grid-cols-2 xl:grid-cols-4">
@@ -87,9 +100,11 @@ export default function HomePage() {
               style={{ animationDelay: `${index * 120}ms` }}
             >
               <p className="eyebrow">Servicio</p>
-              <h2 className="mt-4 font-display text-3xl text-forest">{item.title}</h2>
-              <p className="mt-4 flex-1 leading-7 text-ink/75">{item.description}</p>
-              <Link href={item.href} className="mt-6 text-sm font-semibold text-terracotta transition hover:text-forest">
+              <h2 className="mt-4 font-display text-3xl text-forest sm:text-4xl">
+                {item.title === 'La Terraza' ? 'La Terraza (Restaurant)' : item.title}
+              </h2>
+              <p className="mt-4 flex-1 text-base leading-7 text-ink/75 sm:text-lg">{item.description}</p>
+              <Link href={item.href} className="mt-6 text-sm font-semibold text-terracotta transition hover:text-forest sm:text-base">
                 {item.cta} →
               </Link>
             </article>
@@ -97,12 +112,13 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* Sobre nosotros */}
       <section className="shell mt-14 grid gap-6 lg:grid-cols-[0.9fr_1.1fr] lg:items-start">
-        <div className="section-card animate-fadeUp bg-floral-strong border-none">
+        <div className="section-card animate-fadeUp border-none bg-floral-strong">
           <SectionHeading
             eyebrow="Sobre nosotros"
             title="Más de 30 años siendo un punto de encuentro gastronómico en La Plata"
-            description="La historia de San Luis está asociada a la rutina real de la ciudad: cafés tempranos, almuerzos al paso, meriendas compartidas y eventos que necesitan un servicio cumplidor. Por eso la identidad visual y el contenido priorizan confianza, cercanía y producto real."
+            description="San Luis fue fundado por Andrea y Fabián, quienes apostaron a construir un espacio con identidad propia en la esquina de 7 y 63. Lo que empezó como un sueño compartido se transformó en una confitería de referencia para los platenses: un lugar donde la calidez del trato, la cocina casera y la atención al detalle son parte de cada día."
           />
         </div>
         <div className="grid gap-5">
@@ -113,12 +129,17 @@ export default function HomePage() {
               style={{ animationDelay: `${index * 120}ms` }}
             >
               <h3 className="font-display text-2xl text-forest">{item.title}</h3>
-              <p className="mt-3 leading-7 text-ink/75">{item.description}</p>
+              <p className="mt-3 leading-7 text-ink/75">
+                {item.title === 'Tradición platense'
+                  ? 'San Luis nació de la mano de Andrea y Fabián como un punto de encuentro barrial. Juntos levantaron el negocio con esfuerzo, pasión y atención cercana, y hoy sigue siendo una referencia para quienes buscan calidad constante, cerámica artesanal y trato familiar.'
+                  : item.description}
+              </p>
             </article>
           ))}
         </div>
       </section>
 
+      {/* Menú destacado */}
       <section className="shell mt-14">
         <div className="section-card animate-fadeUp">
           <SectionHeading
@@ -145,46 +166,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="shell mt-14">
-        <SectionHeading
-          eyebrow="Nuestro espacio"
-          title="Un lugar con identidad propia para cada momento"
-          description="Cerámica artesanal, ambientación cálida y rincones diseñados para que cada visita sea una experiencia."
-        />
-        <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-          {[
-            { src: '/instagram-media/decoracion/17848302642535331.jpg', label: 'Ambiente' },
-            { src: '/instagram-media/decoracion/17926472615846851.jpg', label: 'Detalles' },
-            { src: '/instagram-media/terraza/18079865375079935.jpg', label: 'Terraza' },
-            { src: '/instagram-media/decoracion/18054635804449453.jpg', label: 'Rincones' },
-          ].map((photo, index) => (
-            <article
-              key={photo.src}
-              className="group animate-fadeUp overflow-hidden rounded-[1.75rem] border border-forest/10 bg-white/80 shadow-soft"
-              style={{ animationDelay: `${index * 100}ms` }}
-            >
-              <div className="relative aspect-[4/3] bg-sand/40">
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img
-                  src={photo.src}
-                  alt={photo.label}
-                  className="h-full w-full object-cover transition duration-500 group-hover:scale-[1.03]"
-                  loading="lazy"
-                />
-              </div>
-              <div className="p-4 text-center">
-                <p className="text-sm font-semibold text-forest">{photo.label}</p>
-              </div>
-            </article>
-          ))}
-        </div>
-        <Link href="/decoracion" className="mt-8 inline-flex text-sm font-semibold text-terracotta transition hover:text-forest">
-          Ver todo el espacio →
-        </Link>
-      </section>
-
-      <InstagramGallery />
-
+      {/* Reservas y eventos */}
       <section className="shell mt-14 pb-4">
         <div className="section-card animate-fadeUp overflow-hidden border-none bg-forest text-cream">
           <div className="grid gap-8 lg:grid-cols-[1fr_0.8fr] lg:items-center">
