@@ -18,7 +18,8 @@ body {
 }
 
 ::selection {
-  @apply bg-terracotta/30 text-ink;
+  background-color: rgb(184 115 82 / 0.3);
+  color: #243127;
 }
 
 @layer components {
@@ -27,10 +28,19 @@ body {
   }
 
   .section-card {
-    @apply rounded-[2rem] border border-forest/10 bg-white/82 p-6 shadow-soft backdrop-blur-sm transition duration-300 hover:-translate-y-1 hover:shadow-[0_22px_60px_rgba(58,78,61,0.16)] sm:p-8;
+    @apply border border-forest/10 p-6 backdrop-blur-sm transition duration-300 sm:p-8;
+    border-radius: 2rem;
+    background-color: rgb(255 255 255 / 0.82);
+    box-shadow: 0 20px 55px rgba(63, 82, 67, 0.12);
+  }
+
+  .section-card:hover {
+    transform: translateY(-0.25rem);
+    box-shadow: 0 22px 60px rgba(58, 78, 61, 0.16);
   }
 
   .eyebrow {
-    @apply text-xs font-semibold uppercase tracking-[0.35em] text-forest/70;
+    @apply text-xs font-semibold uppercase text-forest/70;
+    letter-spacing: 0.35em;
   }
 }
