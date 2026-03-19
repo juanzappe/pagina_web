@@ -3,6 +3,18 @@ import { SectionHero } from '@/components/section-hero';
 import { SectionHeading } from '@/components/section-heading';
 import { siteInfo, terrazaCategories, terrazaIntro, terrazaMoments } from '@/data/site';
 
+const terrazaImages = [
+  { src: '/instagram-media/terraza/17870040447466825.jpg', alt: 'Vista de La Terraza al aire libre' },
+  { src: '/instagram-media/terraza/17994970235657151.jpg', alt: 'Platos servidos en La Terraza' },
+  { src: '/instagram-media/terraza/18016453129490780.jpg', alt: 'Ambiente del restaurante' },
+  { src: '/instagram-media/terraza/18021903137557414.jpg', alt: 'Mesas preparadas para el servicio' },
+  { src: '/instagram-media/terraza/18079865375079935.jpg', alt: 'Detalle gastronómico de La Terraza' },
+  { src: '/instagram-media/terraza/18080172466816603.jpg', alt: 'Espacio interior del restaurante' },
+  { src: '/instagram-media/terraza/18111754417597967.jpg', alt: 'Comensales disfrutando en La Terraza' },
+  { src: '/instagram-media/terraza/18162808507389232.jpg', alt: 'Presentación de platos del día' },
+  { src: '/instagram-media/terraza/18304612939265084.jpg', alt: 'Rincón de La Terraza' },
+];
+
 export default function LaTerrazaPage() {
   return (
     <>
@@ -37,6 +49,37 @@ export default function LaTerrazaPage() {
 
       <section className="shell mt-10">
         <MenuGrid sections={terrazaCategories} />
+      </section>
+
+      <section className="shell mt-12 pb-4">
+        <SectionHeading
+          eyebrow="Galería"
+          title="Así se vive La Terraza"
+          description="Fotos reales de nuestro restaurante, sus platos y su ambiente."
+        />
+        <div className="mt-8 grid gap-5 sm:grid-cols-2 xl:grid-cols-3">
+          {terrazaImages.map((image, index) => (
+            <article
+              key={image.src}
+              className="group animate-fadeUp overflow-hidden rounded-[1.75rem] border border-forest/10 bg-white/80 shadow-soft"
+              style={{ animationDelay: `${index * 80}ms` }}
+            >
+              <div className="relative aspect-[4/3] bg-sand/40">
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src={image.src}
+                  alt={image.alt}
+                  className="h-full w-full object-cover transition duration-500 group-hover:scale-[1.03]"
+                  loading={index < 3 ? 'eager' : 'lazy'}
+                />
+              </div>
+              <div className="p-5">
+                <p className="eyebrow">La Terraza</p>
+                <p className="mt-2 text-sm leading-6 text-ink/75">{image.alt}</p>
+              </div>
+            </article>
+          ))}
+        </div>
       </section>
     </>
   );
