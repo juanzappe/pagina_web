@@ -5,7 +5,6 @@ import {
   serviceHighlights,
   siteInfo,
   terrazaCategories,
-  trustPoints,
 } from '@/data/site';
 import { SectionHeading } from '@/components/section-heading';
 
@@ -110,14 +109,14 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="shell mt-14 grid gap-6 lg:grid-cols-[1.1fr_0.9fr]">
+      <section className="shell mt-14">
         <div className="section-card animate-fadeUp">
           <SectionHeading
             eyebrow="Menú destacado"
             title="Una vista rápida de La Terraza para abrir el apetito"
             description="La carta mezcla platos de salón, opciones rápidas, desayunos y postres para que la web comunique variedad real, no una plantilla genérica."
           />
-          <div className="mt-8 grid gap-4 sm:grid-cols-2">
+          <div className="mt-8 grid gap-4 sm:grid-cols-2 xl:grid-cols-4">
             {terrazaCategories.slice(0, 4).map((section) => (
               <div key={section.title} className="rounded-[1.5rem] border border-forest/10 bg-sand/30 p-5">
                 <p className="eyebrow">{section.badge}</p>
@@ -133,22 +132,6 @@ export default function HomePage() {
           <Link href="/la-terraza" className="mt-8 inline-flex text-sm font-semibold text-terracotta transition hover:text-forest">
             Ver la carta completa →
           </Link>
-        </div>
-
-        <div className="section-card animate-fadeUp">
-          <SectionHeading
-            eyebrow="Por qué elegirnos"
-            title="Una experiencia clara, profesional y lista para crecer"
-            description="La nueva estructura mejora la navegación, transmite confianza y deja preparada la base para sumar reservas o pedidos online más adelante."
-          />
-          <ul className="mt-8 space-y-4 text-sm leading-6 text-ink/80">
-            {trustPoints.map((item) => (
-              <li key={item} className="flex items-start gap-3 rounded-[1.25rem] border border-forest/10 bg-white p-4">
-                <span className="mt-2 h-2 w-2 rounded-full bg-terracotta" />
-                <span>{item}</span>
-              </li>
-            ))}
-          </ul>
         </div>
       </section>
 

@@ -19,7 +19,7 @@ export default function MostradorPage() {
           <SectionHeading
             eyebrow="Qué encontrás"
             title={mostradorIntro.title}
-            description="La navegación se enfoca en resolver rápido lo que el cliente quiere ver: sándwiches de miga, menú del día y productos de panadería para sumar al paso."
+            description="La navegación se enfoca en resolver rápido lo que el cliente quiere ver: sándwiches de miga y productos de panadería para sumar al paso."
           />
         </div>
         <div className="grid gap-4">

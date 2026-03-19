@@ -40,14 +40,14 @@ export const serviceHighlights = [
   {
     title: 'La Terraza',
     description:
-      'Restaurante con platos caseros, desayunos completos, meriendas abundantes y postres artesanales en un ambiente relajado.',
+      'Restaurante con platos caseros, plato del día, meriendas abundantes y postres artesanales en un ambiente relajado.',
     href: '/la-terraza',
     cta: 'Explorar carta',
   },
   {
     title: 'Mostrador',
     description:
-      'Sándwiches de miga, menú del día, panadería fresca y opciones rápidas para llevar o resolver una comida sin perder calidad.',
+      'Sándwiches de miga, panadería fresca y opciones rápidas para llevar o resolver una comida sin perder calidad.',
     href: '/mostrador',
     cta: 'Ver opciones',
   },
@@ -108,6 +108,16 @@ export const terrazaCategories: MenuCategory[] = [
       'Bondiola braseada con puré rústico y cebollas caramelizadas',
       'Milanesa crocante con papas cuña y alioli de hierbas',
       'Pesca del día con vegetales asados y manteca cítrica',
+    ],
+  },
+  {
+    title: 'Plato del día',
+    badge: 'Especial del mediodía',
+    description: 'Una propuesta casera que cambia seguido para quienes buscan almorzar rico en el salón.',
+    items: [
+      'Plato principal casero',
+      'Bebida sin alcohol',
+      'Postre del día o fruta fresca',
     ],
   },
   {
@@ -178,16 +188,6 @@ export const mostradorCategories: MenuCategory[] = [
       'Pollo al curry suave',
       'Roquefort, nuez y apio',
       'Caprese con tomate y albahaca',
-    ],
-  },
-  {
-    title: 'Menú del día',
-    badge: 'Listo para retirar',
-    description: 'Una solución completa para el almuerzo de oficina o el mediodía en casa.',
-    items: [
-      'Plato principal casero',
-      'Bebida sin alcohol',
-      'Postre del día o fruta fresca',
     ],
   },
   {
