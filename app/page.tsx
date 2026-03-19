@@ -6,60 +6,68 @@ import {
   siteInfo,
   terrazaCategories,
 } from '@/data/site';
-import { fallbackHeroImage } from '@/data/instagram-gallery';
 import { InstagramGallery } from '@/components/instagram-gallery';
 import { SectionHeading } from '@/components/section-heading';
 
 export default function HomePage() {
   return (
     <>
+      {/* Hero: split layout – texto + foto del edificio */}
       <section className="shell pt-6 sm:pt-10">
-        <div className="relative overflow-hidden rounded-[2rem] bg-forest text-white shadow-soft">
-          <div
-            className="absolute inset-0 bg-cover bg-center"
-            style={{
-              backgroundImage: `linear-gradient(90deg, rgba(42, 31, 26, 0.85) 0%, rgba(74, 100, 128, 0.70) 45%, rgba(74, 100, 128, 0.40) 100%), url(${fallbackHeroImage || siteInfo.heroImage})`,
-            }}
-          />
-          <div className="relative grid gap-10 px-6 py-14 sm:px-10 sm:py-20 lg:grid-cols-[1.05fr_0.95fr] lg:items-end">
-            <div className="animate-fadeUp">
-              <p className="eyebrow !text-sand">Cosas ricas y más · La Plata</p>
-              <h1 className="mt-4 max-w-3xl font-display text-5xl leading-tight sm:text-6xl">{siteInfo.name}</h1>
-              <p className="mt-5 max-w-2xl text-lg leading-8 text-white/85 sm:text-xl">{siteInfo.tagline}</p>
-              <p className="mt-4 max-w-2xl text-base leading-7 text-white/75">{siteInfo.description}</p>
-              <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
-                <Link
-                  href="/la-terraza"
-                  className="rounded-full bg-terracotta px-6 py-3 text-center text-sm font-semibold text-white transition duration-300 hover:-translate-y-0.5 hover:bg-sand hover:text-ink"
-                >
-                  Ver menú
-                </Link>
-                <Link
-                  href="/contacto"
-                  className="rounded-full border border-white/20 bg-white/10 px-6 py-3 text-center text-sm font-semibold text-white transition duration-300 hover:-translate-y-0.5 hover:bg-white hover:text-ink"
-                >
-                  Contacto
-                </Link>
-                <Link
-                  href="/catering"
-                  className="rounded-full border border-white/20 bg-white/10 px-6 py-3 text-center text-sm font-semibold text-white transition duration-300 hover:-translate-y-0.5 hover:bg-white hover:text-ink"
-                >
-                  Catering
-                </Link>
+        <div className="overflow-hidden rounded-[2rem] shadow-soft">
+          <div className="grid lg:grid-cols-[1fr_1fr]">
+            {/* Lado izquierdo: contenido */}
+            <div className="flex flex-col justify-center bg-forest px-6 py-12 text-white sm:px-10 sm:py-16 lg:py-20">
+              <div className="animate-fadeUp">
+                <p className="eyebrow !text-sand/90">Cosas ricas y más · Av. 7 esq. 63, La Plata</p>
+                <h1 className="mt-5 font-display text-5xl leading-[1.1] sm:text-6xl lg:text-7xl">{siteInfo.name}</h1>
+                <p className="mt-2 font-display text-xl text-sand sm:text-2xl">Confitería</p>
+                <p className="mt-6 max-w-lg text-base leading-7 text-white/80">{siteInfo.description}</p>
+                <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
+                  <Link
+                    href="/la-terraza"
+                    className="rounded-full bg-terracotta px-6 py-3 text-center text-sm font-semibold text-white transition duration-300 hover:-translate-y-0.5 hover:bg-sand hover:text-ink"
+                  >
+                    Ver menú
+                  </Link>
+                  <Link
+                    href="/decoracion"
+                    className="rounded-full border border-white/20 bg-white/10 px-6 py-3 text-center text-sm font-semibold text-white transition duration-300 hover:-translate-y-0.5 hover:bg-white hover:text-ink"
+                  >
+                    Conocer el espacio
+                  </Link>
+                  <Link
+                    href="/contacto"
+                    className="rounded-full border border-white/20 bg-white/10 px-6 py-3 text-center text-sm font-semibold text-white transition duration-300 hover:-translate-y-0.5 hover:bg-white hover:text-ink"
+                  >
+                    Contacto
+                  </Link>
+                </div>
+              </div>
+
+              {/* Stats debajo del texto */}
+              <div className="mt-10 grid gap-3 sm:grid-cols-3">
+                {heroStats.map((item, index) => (
+                  <article
+                    key={item.label}
+                    className="animate-fadeUp rounded-[1.25rem] border border-white/10 bg-white/8 p-4"
+                    style={{ animationDelay: `${index * 120}ms` }}
+                  >
+                    <p className="font-display text-2xl text-sand">{item.value}</p>
+                    <p className="mt-1 text-xs leading-5 text-white/65">{item.label}</p>
+                  </article>
+                ))}
               </div>
             </div>
 
-            <div className="grid gap-4 sm:grid-cols-3 lg:grid-cols-1">
-              {heroStats.map((item, index) => (
-                <article
-                  key={item.label}
-                  className="animate-fadeUp rounded-[1.5rem] border border-white/10 bg-white/10 p-5 backdrop-blur"
-                  style={{ animationDelay: `${index * 120}ms` }}
-                >
-                  <p className="font-display text-3xl text-sand">{item.value}</p>
-                  <p className="mt-2 text-sm leading-6 text-white/75">{item.label}</p>
-                </article>
-              ))}
+            {/* Lado derecho: foto del edificio */}
+            <div className="relative min-h-[400px] bg-sand/40 lg:min-h-0">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src="/instagram-media/CONFITERIA.jpg"
+                alt="Fachada de Confitería San Luis – esquina clásica con flores pintadas a mano"
+                className="h-full w-full object-cover object-center"
+              />
             </div>
           </div>
         </div>
