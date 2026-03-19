@@ -68,10 +68,10 @@ export default function HomePage() {
       <section className="shell mt-14">
         <SectionHeading
           eyebrow="Qué ofrecemos"
-          title="Tres formas de vivir San Luis según tu momento del día"
+          title="Cuatro formas de vivir San Luis según tu momento del día"
           description="Desde un desayuno rápido hasta un evento completo, la propuesta está pensada para que la experiencia se vea profesional, cercana y consistente en cada servicio."
         />
-        <div className="mt-8 grid gap-6 lg:grid-cols-3">
+        <div className="mt-8 grid gap-6 md:grid-cols-2 xl:grid-cols-4">
           {serviceHighlights.map((item, index) => (
             <article
               key={item.title}

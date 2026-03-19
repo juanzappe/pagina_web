@@ -27,13 +27,14 @@ export const navLinks = [
   { href: '/la-terraza', label: 'La Terraza' },
   { href: '/mostrador', label: 'Mostrador' },
   { href: '/catering', label: 'Catering' },
+  { href: '/decoracion', label: 'Decoración' },
   { href: '/contacto', label: 'Contacto' },
 ];
 
 export const heroStats = [
   { value: '30+', label: 'años de historia' },
   { value: '7 y 63', label: 'ubicación clásica en La Plata' },
-  { value: '3', label: 'formas de disfrutar: salón, mostrador y eventos' },
+  { value: '4', label: 'formas de disfrutar: salón, mostrador, eventos y ambiente' },
 ];
 
 export const serviceHighlights = [
@@ -57,6 +58,13 @@ export const serviceHighlights = [
       'Servicios para eventos sociales, corporativos y coffee breaks con propuestas flexibles, presentación cuidada y sabor casero.',
     href: '/catering',
     cta: 'Consultar evento',
+  },
+  {
+    title: 'Decoración',
+    description:
+      'Un espacio con identidad propia: ambientación cálida, detalles artesanales y rincones diseñados para hacer de cada visita una experiencia memorable.',
+    href: '/decoracion',
+    cta: 'Ver el espacio',
   },
 ];
 
@@ -274,6 +282,37 @@ export const cateringProcess = [
   'Nos contás el tipo de evento, la fecha y la cantidad de invitados.',
   'Armamos una propuesta con formato, variedad y rango estimado según tu necesidad.',
   'Coordinamos producción, entrega y servicio para que el evento salga prolijo de punta a punta.',
+];
+
+export const decoracionIntro = {
+  title: 'Un espacio pensado para que cada detalle cuente',
+  description:
+    'La ambientación de San Luis combina calidez, estilo y funcionalidad. Cada rincón está diseñado para que te sientas cómodo, ya sea en un desayuno tranquilo, un almuerzo de trabajo o una merienda con amigos.',
+};
+
+export const decoracionHighlights = [
+  {
+    title: 'Ambiente cálido',
+    description:
+      'Iluminación tenue, materiales nobles y detalles florales que generan un clima acogedor desde que entrás.',
+  },
+  {
+    title: 'Espacios versátiles',
+    description:
+      'Terraza al aire libre, salón interior y rincones íntimos que se adaptan a distintos momentos del día y tipos de encuentro.',
+  },
+  {
+    title: 'Identidad visual',
+    description:
+      'Cada elemento de la decoración refuerza la personalidad de San Luis: tradición platense con un toque contemporáneo y atención al detalle.',
+  },
+];
+
+export const decoracionFeatures = [
+  'Terraza con vegetación natural y mobiliario de diseño.',
+  'Salón interior con iluminación cálida y detalles artesanales.',
+  'Vajilla seleccionada para una presentación cuidada en cada servicio.',
+  'Rincones fotogénicos que reflejan la identidad del local.',
 ];
 
 export const contactHighlights = [
