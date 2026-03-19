@@ -6,6 +6,8 @@ import {
   siteInfo,
   terrazaCategories,
 } from '@/data/site';
+import { fallbackHeroImage } from '@/data/instagram-gallery';
+import { InstagramGallery } from '@/components/instagram-gallery';
 import { SectionHeading } from '@/components/section-heading';
 
 export default function HomePage() {
@@ -16,7 +18,7 @@ export default function HomePage() {
           <div
             className="absolute inset-0 bg-cover bg-center"
             style={{
-              backgroundImage: `linear-gradient(90deg, rgba(31, 42, 35, 0.88) 0%, rgba(31, 42, 35, 0.66) 45%, rgba(31, 42, 35, 0.35) 100%), url(${siteInfo.heroImage})`,
+              backgroundImage: `linear-gradient(90deg, rgba(31, 42, 35, 0.88) 0%, rgba(31, 42, 35, 0.66) 45%, rgba(31, 42, 35, 0.35) 100%), url(${fallbackHeroImage || siteInfo.heroImage})`,
             }}
           />
           <div className="relative grid gap-10 px-6 py-14 sm:px-10 sm:py-20 lg:grid-cols-[1.05fr_0.95fr] lg:items-end">
@@ -134,6 +136,8 @@ export default function HomePage() {
           </Link>
         </div>
       </section>
+
+      <InstagramGallery />
 
       <section className="shell mt-14 pb-4">
         <div className="section-card animate-fadeUp overflow-hidden border-none bg-forest text-cream">
