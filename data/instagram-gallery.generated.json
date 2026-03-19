@@ -1,0 +1,26 @@
+{
+  "generatedAt": "2026-03-19T19:17:41.771Z",
+  "sourceDir": "/data/instagram",
+  "summary": {
+    "totalSelected": 0,
+    "productos": 0,
+    "servicios": 0,
+    "local": 0,
+    "otros": 0,
+    "notes": [
+      "No se encontró el directorio de exportación: /data/instagram"
+    ]
+  },
+  "sections": {
+    "inicio": [],
+    "productos": [],
+    "servicios": [],
+    "galeria": []
+  },
+  "categories": {
+    "productos": [],
+    "servicios": [],
+    "local": [],
+    "otros": []
+  }
+}
