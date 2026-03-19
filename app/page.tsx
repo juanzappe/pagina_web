@@ -1,6 +1,5 @@
 import Link from 'next/link';
 import {
-  aboutFeatures,
   serviceHighlights,
   siteInfo,
   terrazaCategories,
@@ -168,43 +167,83 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Sobre nosotros – con foto de Andrea y Fabián */}
-      <section className="shell mt-14 grid gap-6 lg:grid-cols-[0.9fr_1.1fr] lg:items-start">
-        <div className="section-card animate-fadeUp border-none bg-floral-strong">
-          <SectionHeading
-            eyebrow="Sobre nosotros"
-            title="Más de 30 años siendo un punto de encuentro gastronómico en La Plata"
-            description="San Luis fue fundado por Andrea y Fabián, quienes apostaron a construir un espacio con identidad propia en la esquina de 7 y 63. Lo que empezó como un sueño compartido se transformó en una confitería de referencia para los platenses: un lugar donde la calidez del trato, la cocina casera y la atención al detalle son parte de cada día."
-          />
+      {/* Nosotros – Quiénes somos, Misión y Valores */}
+      <section className="shell mt-14">
+        <SectionHeading
+          eyebrow="Nosotros"
+          title="Más de 34 años transformando pasión en experiencias memorables"
+          description="Calidad, calidez y tradición en cada producto y servicio, porque creemos que los mejores momentos se disfrutan alrededor de una buena mesa."
+        />
+
+        {/* Quiénes somos + foto fundadores */}
+        <div className="mt-8 grid gap-6 lg:grid-cols-[1.1fr_0.9fr] lg:items-start">
+          <div className="section-card animate-fadeUp">
+            <p className="eyebrow">Quiénes somos</p>
+            <h3 className="mt-4 font-display text-2xl text-forest sm:text-3xl">Una empresa familiar nacida de la amistad</h3>
+            <div className="mt-4 space-y-4 text-base leading-7 text-ink/75">
+              <p>
+                Somos una empresa familiar con más de 34 años de trayectoria en el mundo gastronómico, fundada por dos amigos que, desde el primer día, compartieron la pasión por el trabajo bien hecho y el compromiso con la calidad.
+              </p>
+              <p>
+                Nuestra historia es también la de un equipo: muchos de nuestros colaboradores nos acompañan desde el primer día, formando parte esencial de esta gran familia. Creemos que la dedicación, el esfuerzo diario y la confianza mutua son los ingredientes que nos permiten ofrecer productos y servicios de excelencia a cada cliente, sin importar si se trata de una gran empresa, una entidad gubernamental o un particular.
+              </p>
+              <p>
+                La calidad no se negocia: cuidamos cada detalle y nos esforzamos en mantener los valores que nos guiaron desde el comienzo. Somos una empresa donde el respeto, la amistad y el espíritu de familia se reflejan tanto puertas adentro como en cada uno de nuestros servicios.
+              </p>
+              <p>
+                Agradecemos a quienes nos eligen, y especialmente a nuestro equipo, que con su compromiso y experiencia, hacen posible que sigamos creciendo, aprendiendo y ofreciendo lo mejor de nosotros cada día.
+              </p>
+            </div>
+          </div>
+
           {/* Foto de los fundadores */}
-          <div className="mt-6 overflow-hidden rounded-[1.5rem]">
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img
-              src="/instagram-media/ANDREAYFABIAN.jpg"
-              alt="Andrea y Fabián, fundadores de Confitería San Luis"
-              className="w-full object-cover"
-              loading="lazy"
-            />
-            <p className="mt-3 text-center text-sm font-semibold text-forest/70">
-              Andrea y Fabián – Fundadores
-            </p>
+          <div className="section-card animate-fadeUp border-none bg-floral-strong" style={{ animationDelay: '120ms' }}>
+            <div className="overflow-hidden rounded-[1.5rem]">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src="/instagram-media/ANDREAYFABIAN.jpg"
+                alt="Andrea y Fabián, fundadores de Confitería San Luis"
+                className="w-full object-cover"
+                loading="lazy"
+              />
+            </div>
+            <p className="mt-4 text-center font-display text-xl text-forest">Andrea y Fabián</p>
+            <p className="mt-1 text-center text-sm text-forest/70">Fundadores · Desde 1991</p>
+
+            {/* Misión */}
+            <div className="mt-6 rounded-[1.25rem] border border-forest/10 bg-white/60 p-5">
+              <p className="eyebrow">Nuestra misión</p>
+              <p className="mt-3 text-sm leading-6 text-ink/75">
+                Brindar productos y servicios gastronómicos de la más alta calidad, combinando tradición, innovación y atención personalizada, para crear experiencias memorables en nuestros clientes.
+              </p>
+            </div>
           </div>
         </div>
-        <div className="grid gap-5">
-          {aboutFeatures.map((item, index) => (
-            <article
-              key={item.title}
-              className="section-card animate-fadeUp"
-              style={{ animationDelay: `${index * 120}ms` }}
-            >
-              <h3 className="font-display text-2xl text-forest">{item.title}</h3>
-              <p className="mt-3 leading-7 text-ink/75">
-                {item.title === 'Tradición platense'
-                  ? 'San Luis nació de la mano de Andrea y Fabián como un punto de encuentro barrial. Juntos levantaron el negocio con esfuerzo, pasión y atención cercana, y hoy sigue siendo una referencia para quienes buscan calidad constante, cerámica artesanal y trato familiar.'
-                  : item.description}
-              </p>
-            </article>
-          ))}
+
+        {/* Valores */}
+        <div className="mt-8">
+          <h3 className="font-display text-2xl text-forest sm:text-3xl">Nuestros valores</h3>
+          <div className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+            {[
+              { title: 'Calidad innegociable', description: 'No hacemos concesiones en la calidad de nuestros productos y servicios. Buscamos la excelencia en cada detalle.' },
+              { title: 'Esfuerzo y dedicación', description: 'Ponemos el corazón en cada proyecto, cuidando cada detalle con la pasión que nos caracteriza.' },
+              { title: 'Amistad y confianza', description: 'Nuestra sociedad nació de la amistad y el respeto mutuo, y esos valores guían todas nuestras relaciones.' },
+              { title: 'Compromiso', description: 'Cumplimos con cada cliente, sea grande o pequeño, del sector privado o público. Cumplimos con lo que prometemos.' },
+              { title: 'Tradición e innovación', description: 'Valoramos nuestras raíces y recetas de siempre, pero nos adaptamos y renovamos constantemente.' },
+              { title: 'Familia', description: 'El espíritu familiar está presente en cómo trabajamos y nos relacionamos con colaboradores y clientes.' },
+              { title: 'Pasión', description: 'Amamos lo que hacemos y lo transmitimos en cada producto, cada servicio y cada encuentro.' },
+              { title: 'Atención personalizada', description: 'Cada cliente es único y merece una experiencia especial. Tratamos a todos con consideración y honestidad.' },
+            ].map((valor, index) => (
+              <article
+                key={valor.title}
+                className="animate-fadeUp rounded-[1.5rem] border border-forest/10 bg-sand/30 p-5"
+                style={{ animationDelay: `${index * 80}ms` }}
+              >
+                <h4 className="font-display text-lg text-forest">{valor.title}</h4>
+                <p className="mt-2 text-sm leading-6 text-ink/70">{valor.description}</p>
+              </article>
+            ))}
+          </div>
         </div>
       </section>
 
