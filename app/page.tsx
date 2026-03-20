@@ -5,6 +5,7 @@ import {
   siteInfo,
   terrazaCategories,
 } from '@/data/site';
+import { SectionDivider } from '@/components/section-divider';
 import { SectionHeading } from '@/components/section-heading';
 
 /* Fotos seleccionadas por sección */
@@ -108,8 +109,10 @@ export default function HomePage() {
         </div>
       </section>
 
+      <SectionDivider />
+
       {/* Qué ofrecemos – con fotos por sección */}
-      <section className="shell mt-14">
+      <section className="shell mt-16">
         <SectionHeading
           eyebrow="Qué ofrecemos"
           title="Todo lo que necesitás en un solo lugar"
@@ -168,8 +171,10 @@ export default function HomePage() {
         </div>
       </section>
 
+      <SectionDivider />
+
       {/* Nosotros – Quiénes somos, Misión y Valores */}
-      <section className="shell mt-14">
+      <section className="shell mt-16">
         <SectionHeading
           eyebrow="Nosotros"
           title="Más de 34 años transformando pasión en experiencias memorables"
@@ -180,8 +185,8 @@ export default function HomePage() {
         <div className="mt-8 grid gap-6 lg:grid-cols-[1.1fr_0.9fr] lg:items-start">
           <div className="section-card animate-fadeUp">
             <p className="eyebrow">Quiénes somos</p>
-            <h3 className="mt-4 font-display text-2xl text-forest sm:text-3xl">Una empresa familiar nacida de la amistad</h3>
-            <div className="mt-4 space-y-4 text-base leading-7 text-ink/75">
+            <h3 className="mt-4 font-display text-2xl leading-snug text-forest sm:text-3xl">Una empresa familiar nacida de la amistad</h3>
+            <div className="mt-5 space-y-5 text-base leading-relaxed text-ink/70">
               <p>
                 Somos una empresa familiar con más de 34 años de trayectoria en el mundo gastronómico, fundada por dos amigos que, desde el primer día, compartieron la pasión por el trabajo bien hecho y el compromiso con la calidad.
               </p>
@@ -248,8 +253,10 @@ export default function HomePage() {
         </div>
       </section>
 
+      <SectionDivider />
+
       {/* Menú destacado – con fotos de platos */}
-      <section className="shell mt-14">
+      <section className="shell mt-16">
         <div className="section-card animate-fadeUp">
           <SectionHeading
             eyebrow="Menú destacado"
@@ -296,8 +303,10 @@ export default function HomePage() {
         </div>
       </section>
 
+      <SectionDivider />
+
       {/* Reseñas de Google Maps */}
-      <section className="shell mt-14">
+      <section className="shell mt-16">
         <SectionHeading
           eyebrow="Reseñas"
           title="Lo que dicen nuestros clientes"
