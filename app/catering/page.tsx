@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import { SectionHero } from '@/components/section-hero';
 import { SectionHeading } from '@/components/section-heading';
+import { MediaItem } from '@/components/media-item';
 import { cateringPlans, cateringProcess, cateringServices, siteInfo } from '@/data/site';
 
 const cateringImages = [
@@ -20,6 +21,18 @@ export default function CateringPage() {
         secondaryCta={{ href: '/contacto', label: 'Ver contacto' }}
       />
 
+      {/* Foto de impacto justo después del hero */}
+      <section className="shell mt-10">
+        <div className="animate-fadeUp overflow-hidden rounded-[1.75rem] shadow-soft">
+          <MediaItem
+            src={cateringImages[0].src}
+            alt={cateringImages[0].alt}
+            className="aspect-[21/9] w-full object-cover"
+            loading="eager"
+          />
+        </div>
+      </section>
+
       <section className="shell mt-12">
         <SectionHeading
           eyebrow="Servicios"
@@ -38,6 +51,26 @@ export default function CateringPage() {
               <p className="mt-4 leading-7 text-ink/75">{service.description}</p>
             </article>
           ))}
+        </div>
+      </section>
+
+      {/* Foto entre secciones */}
+      <section className="shell mt-10">
+        <div className="grid gap-4 sm:grid-cols-2">
+          <div className="animate-fadeUp overflow-hidden rounded-[1.75rem] shadow-soft">
+            <MediaItem
+              src={cateringImages[1].src}
+              alt={cateringImages[1].alt}
+              className="aspect-[4/3] w-full object-cover"
+            />
+          </div>
+          <div className="animate-fadeUp overflow-hidden rounded-[1.75rem] shadow-soft" style={{ animationDelay: '100ms' }}>
+            <MediaItem
+              src={cateringImages[2].src}
+              alt={cateringImages[2].alt}
+              className="aspect-[4/3] w-full object-cover"
+            />
+          </div>
         </div>
       </section>
 
@@ -92,37 +125,6 @@ export default function CateringPage() {
           >
             Consultar por evento
           </Link>
-        </div>
-      </section>
-
-      <section className="shell mt-12 pb-4">
-        <SectionHeading
-          eyebrow="Galería"
-          title="Nuestros eventos en fotos"
-          description="Así se ve el servicio de catering de Confitería San Luis."
-        />
-        <div className="mt-8 grid gap-5 sm:grid-cols-2 xl:grid-cols-3">
-          {cateringImages.map((image, index) => (
-            <article
-              key={image.src}
-              className="group animate-fadeUp overflow-hidden rounded-[1.75rem] border border-forest/10 bg-white/80 shadow-soft"
-              style={{ animationDelay: `${index * 80}ms` }}
-            >
-              <div className="relative aspect-[4/3] bg-sand/40">
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img
-                  src={image.src}
-                  alt={image.alt}
-                  className="h-full w-full object-cover transition duration-500 group-hover:scale-[1.03]"
-                  loading="eager"
-                />
-              </div>
-              <div className="p-5">
-                <p className="eyebrow">Catering</p>
-                <p className="mt-2 text-sm leading-6 text-ink/75">{image.alt}</p>
-              </div>
-            </article>
-          ))}
         </div>
       </section>
     </>
