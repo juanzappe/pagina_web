@@ -33,12 +33,12 @@ export function ContactCard() {
             >
               WhatsApp
             </Link>
-            <Link
+            <a
               href={`mailto:${siteInfo.email}`}
               className="inline-flex items-center justify-center rounded-full bg-terracotta px-5 py-3 text-sm font-semibold text-white transition hover:-translate-y-0.5 hover:bg-forest"
             >
               Email
-            </Link>
+            </a>
             <Link
               href={siteInfo.instagramUrl}
               target="_blank"
