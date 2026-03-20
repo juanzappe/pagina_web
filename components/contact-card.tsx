@@ -25,13 +25,19 @@ export function ContactCard() {
             </ul>
           </div>
 
-          <div className="grid gap-3 sm:grid-cols-2">
+          <div className="grid gap-3 sm:grid-cols-3">
             <Link
               href={siteInfo.whatsappUrl}
               target="_blank"
               className="inline-flex items-center justify-center rounded-full bg-forest px-5 py-3 text-sm font-semibold text-cream transition hover:-translate-y-0.5 hover:bg-ink"
             >
               WhatsApp
+            </Link>
+            <Link
+              href={`mailto:${siteInfo.email}`}
+              className="inline-flex items-center justify-center rounded-full bg-terracotta px-5 py-3 text-sm font-semibold text-white transition hover:-translate-y-0.5 hover:bg-forest"
+            >
+              Email
             </Link>
             <Link
               href={siteInfo.instagramUrl}

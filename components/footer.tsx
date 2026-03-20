@@ -3,7 +3,7 @@ import { navLinks, siteInfo } from '@/data/site';
 
 export function Footer() {
   return (
-    <footer className="mt-20 border-t border-forest/10 bg-white/70">
+    <footer className="mt-20 border-t border-forest/10 bg-white/60 backdrop-blur-sm">
       <div className="shell grid gap-10 py-10 lg:grid-cols-[1.2fr_0.8fr_0.8fr]">
         <div>
           <p className="font-display text-3xl text-forest">{siteInfo.name}</p>
@@ -31,6 +31,9 @@ export function Footer() {
             </Link>
             <Link href={siteInfo.whatsappUrl} target="_blank" className="block transition hover:text-terracotta">
               WhatsApp · {siteInfo.whatsapp}
+            </Link>
+            <Link href={`mailto:${siteInfo.email}`} className="block transition hover:text-terracotta">
+              Email · {siteInfo.email}
             </Link>
           </div>
         </div>

@@ -9,6 +9,7 @@ export const siteInfo = {
   neighborhood: 'Ubicados en una esquina tradicional de La Plata, con salón, terraza y mostrador para llevar.',
   whatsapp: '+54 221 357-0076',
   whatsappUrl: 'https://wa.me/542213570076?text=Hola%20Confiter%C3%ADa%20San%20Luis%2C%20quiero%20hacer%20una%20consulta.',
+  email: 'confiteriasanluis@gmail.com',
   instagram: '@confiteriasanluislp',
   instagramUrl: 'https://instagram.com/confiteriasanluislp',
   mapsUrl: 'https://maps.google.com/?q=Confiter%C3%ADa+San+Luis+La+Plata',
@@ -314,8 +315,42 @@ export const decoracionFeatures = [
   'Rincones fotogénicos que reflejan la identidad del local.',
 ];
 
+export const googleReviews = [
+  {
+    name: 'Cliente verificado',
+    rating: 5,
+    text: 'La San Luis es una confitería excelente. Salones hermosamente ambientados, muy cómodos y luminosos. Terraza recomendable. Comida de muy buena calidad, facturas enormes. Relación precio-calidad buenísima.',
+  },
+  {
+    name: 'Cliente verificado',
+    rating: 5,
+    text: 'Hablamos con su dueño, Fabián, para el catering de nuestro casamiento. Fue un placer organizarlo con él. Práctico, resolutivo y dándonos la confianza necesaria para dejarlo en sus manos.',
+  },
+  {
+    name: 'Cliente verificado',
+    rating: 5,
+    text: 'Excelente opción para disfrutar solo, con pareja, con amigos o en familia. Posee una terraza con moderada música y excelente vista. Productos exquisitos y atención esmerada.',
+  },
+  {
+    name: 'Cliente verificado',
+    rating: 5,
+    text: 'La Panadería y Confitería San Luis abrió un salón arriba. Es muy bonito y a eso hay que agregarle la calidad de sus productos. Las masas hojaldradas, una delicia. Y la atención, como siempre, impecable.',
+  },
+  {
+    name: 'Cliente verificado',
+    rating: 5,
+    text: 'Excelente servicio!! Los conozco desde el servicio de mi casamiento, el de mi hermana y el bautismo de mi sobrina. ¡Geniales!',
+  },
+  {
+    name: 'Cliente verificado',
+    rating: 5,
+    text: 'Excelente servicio y buenos precios, se nota la calidad de los productos ni bien los probás. Mucha variedad y muy buena atención.',
+  },
+];
+
 export const contactHighlights = [
   'Atención por WhatsApp para reservas, pedidos y eventos.',
   'Instagram activo para novedades, bandejas y propuestas del día.',
+  'Email disponible para consultas formales, presupuestos y eventos corporativos.',
   'Zona accesible de La Plata para desayunar, almorzar o retirar pedidos.',
 ];
