@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import { DM_Sans, Cormorant_Garamond } from 'next/font/google';
 import './globals.css';
 import { Analytics } from '@vercel/analytics/next';
+import { SpeedInsights } from '@vercel/speed-insights/next';
 import { Navbar } from '@/components/navbar';
 import { Footer } from '@/components/footer';
 
@@ -49,6 +50,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
         <main>{children}</main>
         <Footer />
         <Analytics />
+        <SpeedInsights />
       </body>
     </html>
   );
