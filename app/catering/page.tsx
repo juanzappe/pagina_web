@@ -3,6 +3,12 @@ import { SectionHero } from '@/components/section-hero';
 import { SectionHeading } from '@/components/section-heading';
 import { cateringPlans, cateringProcess, cateringServices, siteInfo } from '@/data/site';
 
+const cateringImages = [
+  { src: '/instagram-media/catering/18011055421576585.jpg', alt: 'Servicio de catering para eventos' },
+  { src: '/instagram-media/catering/18171804703276988.jpg', alt: 'Presentación de mesa para evento' },
+  { src: '/instagram-media/catering/18368010715070271.jpg', alt: 'Detalle de bandeja de catering' },
+];
+
 export default function CateringPage() {
   return (
     <>
@@ -86,6 +92,37 @@ export default function CateringPage() {
           >
             Consultar por evento
           </Link>
+        </div>
+      </section>
+
+      <section className="shell mt-12 pb-4">
+        <SectionHeading
+          eyebrow="Galería"
+          title="Nuestros eventos en fotos"
+          description="Así se ve el servicio de catering de Confitería San Luis."
+        />
+        <div className="mt-8 grid gap-5 sm:grid-cols-2 xl:grid-cols-3">
+          {cateringImages.map((image, index) => (
+            <article
+              key={image.src}
+              className="group animate-fadeUp overflow-hidden rounded-[1.75rem] border border-forest/10 bg-white/80 shadow-soft"
+              style={{ animationDelay: `${index * 80}ms` }}
+            >
+              <div className="relative aspect-[4/3] bg-sand/40">
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src={image.src}
+                  alt={image.alt}
+                  className="h-full w-full object-cover transition duration-500 group-hover:scale-[1.03]"
+                  loading="eager"
+                />
+              </div>
+              <div className="p-5">
+                <p className="eyebrow">Catering</p>
+                <p className="mt-2 text-sm leading-6 text-ink/75">{image.alt}</p>
+              </div>
+            </article>
+          ))}
         </div>
       </section>
     </>

@@ -7,18 +7,17 @@ export const siteInfo = {
     'Un clásico platense para comer rico, llevarte algo del mostrador, encontrar objetos artesanales para tu hogar o resolver un evento con servicio profesional.',
   address: 'Zona 7 y 63, La Plata, Buenos Aires',
   neighborhood: 'Ubicados en una esquina tradicional de La Plata, con salón, terraza y mostrador para llevar.',
-  whatsapp: '+54 9 221 555 1234',
-  whatsappUrl: 'https://wa.me/5492215551234?text=Hola%20Confiter%C3%ADa%20San%20Luis%2C%20quiero%20hacer%20una%20consulta.',
-  instagram: '@confiteriasanluis.lp',
-  instagramUrl: 'https://instagram.com/confiteriasanluis.lp',
-  mapsUrl: 'https://maps.google.com/?q=7%20y%2063%20La%20Plata',
-  mapsEmbed: 'https://www.google.com/maps?q=7%20y%2063%20La%20Plata&z=16&output=embed',
+  whatsapp: '+54 221 357-0076',
+  whatsappUrl: 'https://wa.me/542213570076?text=Hola%20Confiter%C3%ADa%20San%20Luis%2C%20quiero%20hacer%20una%20consulta.',
+  instagram: '@confiteriasanluislp',
+  instagramUrl: 'https://instagram.com/confiteriasanluislp',
+  mapsUrl: 'https://maps.google.com/?q=Confiter%C3%ADa+San+Luis+La+Plata',
+  mapsEmbed: 'https://www.google.com/maps?q=Confiter%C3%ADa+San+Luis+La+Plata&z=16&output=embed',
   heroImage:
     'https://images.unsplash.com/photo-1559339352-11d035aa65de?auto=format&fit=crop&w=1600&q=80',
   hours: [
-    { label: 'Lunes a viernes', value: '7:30 a 20:30' },
-    { label: 'Sábados', value: '8:00 a 21:00' },
-    { label: 'Domingos', value: '8:30 a 14:00' },
+    { label: 'Lunes a sábados', value: '8:00 a 20:00' },
+    { label: 'Domingos', value: 'Cerrado' },
   ],
 };
 
