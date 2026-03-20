@@ -17,8 +17,8 @@ const config: Config = {
         ink: '#2A1F1A',
       },
       fontFamily: {
-        sans: ['var(--font-manrope)', 'system-ui', 'sans-serif'],
-        display: ['var(--font-playfair)', 'serif'],
+        sans: ['var(--font-dm-sans)', 'system-ui', 'sans-serif'],
+        display: ['var(--font-cormorant)', 'serif'],
       },
       boxShadow: {
         soft: '0 20px 55px rgba(74, 100, 128, 0.10)',

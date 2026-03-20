@@ -18,6 +18,11 @@ export async function GET(
   { params }: { params: { path?: string[] } },
 ) {
   const requestedSegments = params.path ?? [];
+
+  if (requestedSegments.length === 0) {
+    return NextResponse.json({ error: 'No path provided.' }, { status: 400 });
+  }
+
   const requestedPath = path.join(...requestedSegments);
   const absolutePath = path.resolve(INSTAGRAM_ROOT, requestedPath);
 
@@ -37,7 +42,7 @@ export async function GET(
 
     return new NextResponse(fileBuffer, {
       headers: {
-        'Cache-Control': 'public, max-age=31536000, immutable',
+        'Cache-Control': 'public, max-age=2592000, stale-while-revalidate=86400',
         'Content-Type': contentType,
       },
     });

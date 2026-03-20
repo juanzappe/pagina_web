@@ -8,13 +8,13 @@ import { Footer } from '@/components/footer';
 
 const dmSans = DM_Sans({
   subsets: ['latin'],
-  variable: '--font-manrope',
+  variable: '--font-dm-sans',
 });
 
 const cormorant = Cormorant_Garamond({
   subsets: ['latin'],
   weight: ['400', '500', '600', '700'],
-  variable: '--font-playfair',
+  variable: '--font-cormorant',
 });
 
 export const metadata: Metadata = {

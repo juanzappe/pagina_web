@@ -29,6 +29,7 @@ export function ContactCard() {
             <Link
               href={siteInfo.whatsappUrl}
               target="_blank"
+              rel="noopener noreferrer"
               className="inline-flex items-center justify-center rounded-full bg-forest px-5 py-3 text-sm font-semibold text-cream transition hover:-translate-y-0.5 hover:bg-ink"
             >
               WhatsApp
@@ -36,6 +37,7 @@ export function ContactCard() {
             <Link
               href={siteInfo.emailUrl}
               target="_blank"
+              rel="noopener noreferrer"
               className="inline-flex items-center justify-center rounded-full bg-terracotta px-5 py-3 text-sm font-semibold text-white transition hover:-translate-y-0.5 hover:bg-forest"
             >
               Email
@@ -43,6 +45,7 @@ export function ContactCard() {
             <Link
               href={siteInfo.instagramUrl}
               target="_blank"
+              rel="noopener noreferrer"
               className="inline-flex items-center justify-center rounded-full border border-forest/15 bg-white px-5 py-3 text-sm font-semibold text-forest transition hover:-translate-y-0.5 hover:border-terracotta hover:text-terracotta"
             >
               Instagram
@@ -65,11 +68,12 @@ export function ContactCard() {
           title="Mapa de Confitería San Luis"
           src={siteInfo.mapsEmbed}
           loading="lazy"
+          sandbox="allow-scripts allow-same-origin"
           className="h-[320px] w-full rounded-[1.5rem] border-0 sm:h-full sm:min-h-[460px]"
           referrerPolicy="no-referrer-when-downgrade"
         />
         <div className="px-2 pb-2 pt-4">
-          <Link href={siteInfo.mapsUrl} target="_blank" className="text-sm font-semibold text-forest transition hover:text-terracotta">
+          <Link href={siteInfo.mapsUrl} target="_blank" rel="noopener noreferrer" className="text-sm font-semibold text-forest transition hover:text-terracotta">
             Abrir en Google Maps →
           </Link>
         </div>
