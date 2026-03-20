@@ -32,9 +32,9 @@ export function Footer() {
             <Link href={siteInfo.whatsappUrl} target="_blank" className="block transition hover:text-terracotta">
               WhatsApp · {siteInfo.whatsapp}
             </Link>
-            <Link href={`mailto:${siteInfo.email}`} className="block transition hover:text-terracotta">
+            <a href={`mailto:${siteInfo.email}`} className="block transition hover:text-terracotta">
               Email · {siteInfo.email}
-            </Link>
+            </a>
           </div>
         </div>
       </div>
