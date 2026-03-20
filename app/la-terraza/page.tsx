@@ -61,11 +61,14 @@ export default function LaTerrazaPage() {
           />
         </div>
         <div className="grid gap-4">
+          <div className="animate-fadeUp overflow-hidden rounded-[1.75rem] shadow-soft">
+            <MediaItem src="/instagram-media/terraza/18013320803766499.mp4" alt="Momentos en La Terraza" className="aspect-video w-full object-cover" />
+          </div>
           {terrazaMoments.map((item, index) => (
             <article
               key={item}
               className="section-card animate-fadeUp"
-              style={{ animationDelay: `${index * 120}ms` }}
+              style={{ animationDelay: `${(index + 1) * 120}ms` }}
             >
               <p className="text-sm leading-7 text-ink/75">{item}</p>
             </article>
