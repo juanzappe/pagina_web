@@ -1,18 +1,26 @@
 import { MenuGrid } from '@/components/menu-grid';
 import { SectionHero } from '@/components/section-hero';
 import { SectionHeading } from '@/components/section-heading';
+import { MediaItem } from '@/components/media-item';
 import { siteInfo, terrazaCategories, terrazaIntro, terrazaMoments } from '@/data/site';
 
-const terrazaImages = [
-  { src: '/instagram-media/terraza/17870040447466825.jpg', alt: 'Vista de La Terraza al aire libre' },
+/* Fotos destacadas para integrar en el contenido */
+const heroImages = [
+  { src: '/instagram-media/terraza/18304612939265084.jpg', alt: 'Terraza al atardecer' },
+  { src: '/instagram-media/terraza/18079865375079935.jpg', alt: 'Terraza con sillones y vegetación' },
+];
+
+const dishImages = [
+  { src: '/instagram-media/terraza/18021903137557414.jpg', alt: 'Ensalada caesar con pollo crocante' },
   { src: '/instagram-media/terraza/17994970235657151.jpg', alt: 'Platos servidos en La Terraza' },
-  { src: '/instagram-media/terraza/18016453129490780.jpg', alt: 'Ambiente del restaurante' },
-  { src: '/instagram-media/terraza/18021903137557414.jpg', alt: 'Mesas preparadas para el servicio' },
-  { src: '/instagram-media/terraza/18079865375079935.jpg', alt: 'Detalle gastronómico de La Terraza' },
+  { src: '/instagram-media/terraza/18016453129490780.jpg', alt: 'Café con galletita casera' },
+  { src: '/instagram-media/terraza/18162808507389232.jpg', alt: 'Presentación de platos del día' },
+];
+
+const galleryImages = [
+  { src: '/instagram-media/terraza/17870040447466825.jpg', alt: 'Vista de La Terraza al aire libre' },
   { src: '/instagram-media/terraza/18080172466816603.jpg', alt: 'Espacio interior del restaurante' },
   { src: '/instagram-media/terraza/18111754417597967.jpg', alt: 'Comensales disfrutando en La Terraza' },
-  { src: '/instagram-media/terraza/18162808507389232.jpg', alt: 'Presentación de platos del día' },
-  { src: '/instagram-media/terraza/18304612939265084.jpg', alt: 'Rincón de La Terraza' },
 ];
 
 export default function LaTerrazaPage() {
@@ -25,6 +33,17 @@ export default function LaTerrazaPage() {
         primaryCta={{ href: siteInfo.whatsappUrl, label: 'Reservar mesa' }}
         secondaryCta={{ href: '/contacto', label: 'Cómo llegar' }}
       />
+
+      {/* Fotos del ambiente – justo después del hero */}
+      <section className="shell mt-10">
+        <div className="grid gap-4 sm:grid-cols-2">
+          {heroImages.map((img, i) => (
+            <div key={img.src} className="animate-fadeUp overflow-hidden rounded-[1.75rem] shadow-soft" style={{ animationDelay: `${i * 100}ms` }}>
+              <MediaItem src={img.src} alt={img.alt} className="aspect-[16/9] h-full w-full object-cover" loading="eager" />
+            </div>
+          ))}
+        </div>
+      </section>
 
       <section className="shell mt-12 grid gap-6 lg:grid-cols-[0.9fr_1.1fr]">
         <div className="section-card animate-fadeUp bg-floral-strong border-none">
@@ -47,6 +66,17 @@ export default function LaTerrazaPage() {
         </div>
       </section>
 
+      {/* Fotos de platos intercaladas con el menú */}
+      <section className="shell mt-10">
+        <div className="grid gap-4 grid-cols-2 lg:grid-cols-4">
+          {dishImages.map((img, i) => (
+            <div key={img.src} className="animate-fadeUp overflow-hidden rounded-[1.5rem]" style={{ animationDelay: `${i * 80}ms` }}>
+              <MediaItem src={img.src} alt={img.alt} className="aspect-square w-full object-cover transition duration-500 hover:scale-[1.03]" />
+            </div>
+          ))}
+        </div>
+      </section>
+
       <section className="shell mt-10">
         <MenuGrid sections={terrazaCategories} />
       </section>
@@ -58,20 +88,14 @@ export default function LaTerrazaPage() {
           description="Fotos reales de nuestro restaurante, sus platos y su ambiente."
         />
         <div className="mt-8 grid gap-5 sm:grid-cols-2 xl:grid-cols-3">
-          {terrazaImages.map((image, index) => (
+          {galleryImages.map((image, index) => (
             <article
               key={image.src}
               className="group animate-fadeUp overflow-hidden rounded-[1.75rem] border border-forest/10 bg-white/80 shadow-soft"
               style={{ animationDelay: `${index * 80}ms` }}
             >
               <div className="relative aspect-[4/3] bg-sand/40">
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img
-                  src={image.src}
-                  alt={image.alt}
-                  className="h-full w-full object-cover transition duration-500 group-hover:scale-[1.03]"
-                  loading={index < 3 ? 'eager' : 'lazy'}
-                />
+                <MediaItem src={image.src} alt={image.alt} className="h-full w-full object-cover transition duration-500 group-hover:scale-[1.03]" />
               </div>
               <div className="p-5">
                 <p className="eyebrow">La Terraza</p>

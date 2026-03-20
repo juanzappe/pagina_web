@@ -1,20 +1,36 @@
 import Link from 'next/link';
 import { SectionHero } from '@/components/section-hero';
 import { SectionHeading } from '@/components/section-heading';
+import { MediaItem } from '@/components/media-item';
 import { decoracionHighlights, decoracionFeatures, siteInfo } from '@/data/site';
 
-const decoracionImages = [
+/* Fotos hero – las más impactantes del espacio */
+const heroImages = [
   { src: '/instagram-media/decoracion/17848302642535331.jpg', alt: 'Decoración del local - ambiente interior' },
+  { src: '/instagram-media/decoracion/18054635804449453.jpg', alt: 'Terraza y decoración exterior' },
+];
+
+/* Videos para intercalar entre secciones */
+const videos = [
+  { src: '/instagram-media/decoracion/18086111009178150.mp4', alt: 'Recorrido por el espacio de San Luis' },
+  { src: '/instagram-media/decoracion/18405745870185242.mp4', alt: 'Detalles de la ambientación' },
+];
+
+/* Fotos de detalle entre las secciones de contenido */
+const detailImages = [
+  { src: '/instagram-media/decoracion/17926472615846851.jpg', alt: 'Ambientación cálida del espacio' },
+  { src: '/instagram-media/decoracion/18015459773616821.jpg', alt: 'Iluminación y ambientación' },
+  { src: '/instagram-media/decoracion/17980419476748235.jpg', alt: 'Decoración floral y detalles' },
+  { src: '/instagram-media/decoracion/18256969588147425.jpg', alt: 'Estilo y diseño del espacio' },
+];
+
+/* Galería final con las fotos restantes */
+const galleryImages = [
   { src: '/instagram-media/decoracion/17876936811399098.jpg', alt: 'Detalles decorativos del salón' },
   { src: '/instagram-media/decoracion/17879137104290469.jpg', alt: 'Rincón decorado del local' },
-  { src: '/instagram-media/decoracion/17926472615846851.jpg', alt: 'Ambientación cálida del espacio' },
-  { src: '/instagram-media/decoracion/17980419476748235.jpg', alt: 'Decoración floral y detalles' },
   { src: '/instagram-media/decoracion/17990877713645726.jpg', alt: 'Vista del espacio decorado' },
   { src: '/instagram-media/decoracion/17996215199599061.jpg', alt: 'Elementos decorativos artesanales' },
-  { src: '/instagram-media/decoracion/18015459773616821.jpg', alt: 'Iluminación y ambientación' },
   { src: '/instagram-media/decoracion/18031211909221373.jpg', alt: 'Detalle de decoración interior' },
-  { src: '/instagram-media/decoracion/18054635804449453.jpg', alt: 'Terraza y decoración exterior' },
-  { src: '/instagram-media/decoracion/18256969588147425.jpg', alt: 'Estilo y diseño del espacio' },
   { src: '/instagram-media/decoracion/18265253032132335.jpg', alt: 'Mobiliario y decoración' },
   { src: '/instagram-media/decoracion/18533019187014871.jpg', alt: 'Ambiente general del local' },
 ];
@@ -29,6 +45,17 @@ export default function DecoracionPage() {
         primaryCta={{ href: siteInfo.whatsappUrl, label: 'Reservar una mesa' }}
         secondaryCta={{ href: '/contacto', label: 'Ver contacto' }}
       />
+
+      {/* Fotos de impacto del espacio */}
+      <section className="shell mt-10">
+        <div className="grid gap-4 sm:grid-cols-2">
+          {heroImages.map((img, i) => (
+            <div key={img.src} className="animate-fadeUp overflow-hidden rounded-[1.75rem] shadow-soft" style={{ animationDelay: `${i * 100}ms` }}>
+              <MediaItem src={img.src} alt={img.alt} className="aspect-[16/9] h-full w-full object-cover" loading="eager" />
+            </div>
+          ))}
+        </div>
+      </section>
 
       <section className="shell mt-12">
         <SectionHeading
@@ -51,6 +78,28 @@ export default function DecoracionPage() {
         </div>
       </section>
 
+      {/* Videos del espacio */}
+      <section className="shell mt-10">
+        <div className="grid gap-4 sm:grid-cols-2">
+          {videos.map((vid, i) => (
+            <div key={vid.src} className="animate-fadeUp overflow-hidden rounded-[1.75rem] shadow-soft" style={{ animationDelay: `${i * 100}ms` }}>
+              <MediaItem src={vid.src} alt={vid.alt} className="aspect-[16/9] w-full object-cover" />
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* Fotos de detalles entre secciones */}
+      <section className="shell mt-10">
+        <div className="grid grid-cols-2 gap-4 lg:grid-cols-4">
+          {detailImages.map((img, i) => (
+            <div key={img.src} className="animate-fadeUp overflow-hidden rounded-[1.5rem]" style={{ animationDelay: `${i * 80}ms` }}>
+              <MediaItem src={img.src} alt={img.alt} className="aspect-square w-full object-cover transition duration-500 hover:scale-[1.03]" />
+            </div>
+          ))}
+        </div>
+      </section>
+
       <section className="shell mt-12">
         <SectionHeading
           eyebrow="Galería"
@@ -58,20 +107,14 @@ export default function DecoracionPage() {
           description="Fotos reales de nuestro espacio, tomadas en el día a día del local."
         />
         <div className="mt-8 grid gap-5 sm:grid-cols-2 xl:grid-cols-3">
-          {decoracionImages.map((image, index) => (
+          {galleryImages.map((image, index) => (
             <article
               key={image.src}
               className="group animate-fadeUp overflow-hidden rounded-[1.75rem] border border-forest/10 bg-white/80 shadow-soft"
               style={{ animationDelay: `${index * 80}ms` }}
             >
               <div className="relative aspect-[4/3] bg-sand/40">
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img
-                  src={image.src}
-                  alt={image.alt}
-                  className="h-full w-full object-cover transition duration-500 group-hover:scale-[1.03]"
-                  loading={index < 3 ? 'eager' : 'lazy'}
-                />
+                <MediaItem src={image.src} alt={image.alt} className="h-full w-full object-cover transition duration-500 group-hover:scale-[1.03]" />
               </div>
               <div className="p-5">
                 <p className="eyebrow">Decoración</p>
