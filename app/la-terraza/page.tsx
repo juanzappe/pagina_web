@@ -14,14 +14,13 @@ const dishImages = [
   { src: '/instagram-media/terraza/18021903137557414.jpg', alt: 'Ensalada caesar con pollo crocante' },
   { src: '/instagram-media/terraza/17994970235657151.jpg', alt: 'Platos servidos en La Terraza' },
   { src: '/instagram-media/terraza/18016453129490780.jpg', alt: 'Café con galletita casera' },
-  { src: '/instagram-media/terraza/18162808507389232.jpg', alt: 'Presentación de platos del día' },
+
   { src: '/instagram-media/terraza/17869848435230401.jpg', alt: 'Detalle del ambiente de La Terraza' },
 ];
 
 const galleryImages = [
   { src: '/instagram-media/terraza/17870040447466825.jpg', alt: 'Vista de La Terraza al aire libre' },
   { src: '/instagram-media/terraza/18080172466816603.jpg', alt: 'Espacio interior del restaurante' },
-  { src: '/instagram-media/terraza/18111754417597967.jpg', alt: 'Comensales disfrutando en La Terraza' },
 ];
 
 const galleryVideos = [
