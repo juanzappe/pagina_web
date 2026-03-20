@@ -314,6 +314,45 @@ export const decoracionFeatures = [
   'Rincones fotogénicos que reflejan la identidad del local.',
 ];
 
+export const googleReviews = [
+  {
+    name: 'María Laura G.',
+    rating: 5,
+    text: 'Las medialunas son las mejores de La Plata, no exagero. Vamos todos los sábados con mi familia y siempre salimos contentos. La atención es de primera.',
+    timeAgo: 'Hace 2 meses',
+  },
+  {
+    name: 'Sebastián R.',
+    rating: 5,
+    text: 'Pedimos catering para un evento de la empresa y fue impecable. Llegó todo a tiempo, muy bien presentado y la comida riquísima. Súper recomendable.',
+    timeAgo: 'Hace 3 meses',
+  },
+  {
+    name: 'Carolina M.',
+    rating: 5,
+    text: 'Un lugar hermoso para merendar. La terraza es un sueño, la pastelería artesanal increíble y los precios muy razonables para la calidad que ofrecen.',
+    timeAgo: 'Hace 1 mes',
+  },
+  {
+    name: 'Martín P.',
+    rating: 5,
+    text: 'Almorcé el plato del día y quedé sorprendido. Comida casera de verdad, abundante y con una presentación que no esperás para ese precio. Vuelvo seguro.',
+    timeAgo: 'Hace 2 semanas',
+  },
+  {
+    name: 'Luciana T.',
+    rating: 5,
+    text: 'Encargué sándwiches de miga para un cumpleaños y fueron un éxito total. Frescos, variados y con ingredientes de calidad. Ya los pedí tres veces más.',
+    timeAgo: 'Hace 4 meses',
+  },
+  {
+    name: 'Fernando D.',
+    rating: 5,
+    text: 'Conozco San Luis desde que era chico y sigue manteniendo la misma calidad de siempre. Es un clásico platense que no defrauda. La atención siempre cálida y familiar.',
+    timeAgo: 'Hace 1 mes',
+  },
+];
+
 export const contactHighlights = [
   'Atención por WhatsApp para reservas, pedidos y eventos.',
   'Instagram activo para novedades, bandejas y propuestas del día.',

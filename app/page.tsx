@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import {
+  googleReviews,
   serviceHighlights,
   siteInfo,
   terrazaCategories,
@@ -291,6 +292,44 @@ export default function HomePage() {
           </div>
           <Link href="/la-terraza" className="mt-8 inline-flex text-sm font-semibold text-terracotta transition hover:text-forest">
             Ver la carta completa →
+          </Link>
+        </div>
+      </section>
+
+      {/* Reseñas de Google Maps */}
+      <section className="shell mt-14">
+        <SectionHeading
+          eyebrow="Reseñas"
+          title="Lo que dicen nuestros clientes"
+          description="Opiniones reales de quienes nos eligen para desayunar, almorzar, merendar o celebrar."
+        />
+        <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+          {googleReviews.map((review, index) => (
+            <article
+              key={review.name}
+              className="animate-fadeUp rounded-[1.5rem] border border-forest/10 bg-white/80 p-6"
+              style={{ animationDelay: `${index * 100}ms` }}
+            >
+              <div className="flex items-center gap-1">
+                {Array.from({ length: review.rating }).map((_, i) => (
+                  <span key={i} className="text-lg text-terracotta">&#9733;</span>
+                ))}
+              </div>
+              <p className="mt-3 text-sm leading-6 text-ink/80">&ldquo;{review.text}&rdquo;</p>
+              <div className="mt-4 flex items-center justify-between">
+                <p className="text-sm font-semibold text-forest">{review.name}</p>
+                <p className="text-xs text-ink/50">{review.timeAgo}</p>
+              </div>
+            </article>
+          ))}
+        </div>
+        <div className="mt-6 text-center">
+          <Link
+            href={siteInfo.mapsUrl}
+            target="_blank"
+            className="inline-flex items-center gap-2 text-sm font-semibold text-terracotta transition hover:text-forest"
+          >
+            Ver todas las reseñas en Google Maps &#8594;
           </Link>
         </div>
       </section>
