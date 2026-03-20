@@ -10,7 +10,7 @@ export const siteInfo = {
   whatsapp: '+54 221 357-0076',
   whatsappUrl: 'https://wa.me/542213570076?text=Hola%20Confiter%C3%ADa%20San%20Luis%2C%20quiero%20hacer%20una%20consulta.',
   email: 'confiteriasanluis@gmail.com',
-  emailUrl: 'https://mail.google.com/mail/?view=cm&to=confiteriasanluis@gmail.com',
+  emailUrl: 'mailto:confiteriasanluis@gmail.com',
   instagram: '@confiteriasanluislp',
   instagramUrl: 'https://instagram.com/confiteriasanluislp',
   mapsUrl: 'https://maps.google.com/?q=Confiter%C3%ADa+San+Luis+La+Plata',

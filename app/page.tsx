@@ -86,7 +86,7 @@ export default function HomePage() {
                 ].map((pillar, index) => (
                   <article
                     key={pillar.label}
-                    className="animate-fadeUp rounded-[1.25rem] border border-white/10 bg-white/8 p-4 text-center"
+                    className="animate-fadeUp rounded-[1.25rem] border border-white/10 bg-white/10 p-4 text-center"
                     style={{ animationDelay: `${index * 100}ms` }}
                   >
                     <p className="text-2xl">{pillar.icon}</p>
@@ -315,7 +315,7 @@ export default function HomePage() {
         <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {googleReviews.map((review, index) => (
             <article
-              key={review.name}
+              key={index}
               className="animate-fadeUp rounded-[1.5rem] border border-forest/10 bg-white/80 p-6"
               style={{ animationDelay: `${index * 100}ms` }}
             >
@@ -333,6 +333,7 @@ export default function HomePage() {
           <Link
             href={siteInfo.mapsUrl}
             target="_blank"
+            rel="noopener noreferrer"
             className="inline-flex items-center gap-2 text-sm font-semibold text-terracotta transition hover:text-forest"
           >
             Ver todas las reseñas en Google Maps &#8594;
@@ -355,6 +356,7 @@ export default function HomePage() {
               <Link
                 href={siteInfo.whatsappUrl}
                 target="_blank"
+                rel="noopener noreferrer"
                 className="rounded-full bg-terracotta px-6 py-3 text-center text-sm font-semibold text-white transition hover:-translate-y-0.5 hover:bg-white hover:text-ink"
               >
                 Consultar por WhatsApp

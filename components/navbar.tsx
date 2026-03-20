@@ -42,6 +42,7 @@ export function Navbar() {
           <Link
             href={siteInfo.whatsappUrl}
             target="_blank"
+            rel="noopener noreferrer"
             className="rounded-full bg-terracotta px-4 py-2 text-sm font-semibold text-white transition duration-300 hover:-translate-y-0.5 hover:bg-forest"
           >
             Pedidos y reservas

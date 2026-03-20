@@ -26,13 +26,13 @@ export function Footer() {
           <p className="eyebrow">Contacto</p>
           <div className="mt-4 space-y-3 text-sm text-forest/80">
             <p>{siteInfo.address}</p>
-            <Link href={siteInfo.instagramUrl} target="_blank" className="block transition hover:text-terracotta">
+            <Link href={siteInfo.instagramUrl} target="_blank" rel="noopener noreferrer" className="block transition hover:text-terracotta">
               Instagram · {siteInfo.instagram}
             </Link>
-            <Link href={siteInfo.whatsappUrl} target="_blank" className="block transition hover:text-terracotta">
+            <Link href={siteInfo.whatsappUrl} target="_blank" rel="noopener noreferrer" className="block transition hover:text-terracotta">
               WhatsApp · {siteInfo.whatsapp}
             </Link>
-            <Link href={siteInfo.emailUrl} target="_blank" className="block transition hover:text-terracotta">
+            <Link href={siteInfo.emailUrl} target="_blank" rel="noopener noreferrer" className="block transition hover:text-terracotta">
               Email · {siteInfo.email}
             </Link>
           </div>

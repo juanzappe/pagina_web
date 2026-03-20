@@ -145,6 +145,7 @@ export default function DecoracionPage() {
           <Link
             href={siteInfo.whatsappUrl}
             target="_blank"
+            rel="noopener noreferrer"
             className="mt-8 inline-flex rounded-full bg-forest px-6 py-3 text-sm font-semibold text-cream transition hover:-translate-y-0.5 hover:bg-ink"
           >
             Consultar disponibilidad
