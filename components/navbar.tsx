@@ -13,7 +13,7 @@ export function Navbar() {
         <Link href="/" className="group min-w-0">
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
-            src="/logo-san-luis.svg"
+            src="/LOGO.webp"
             alt="San Luis – Confitería & Catering"
             className="h-10 w-auto transition group-hover:opacity-80 sm:h-12"
           />

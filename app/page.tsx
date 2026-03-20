@@ -43,7 +43,7 @@ export default function HomePage() {
                 {/* Logo arriba a la izquierda */}
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
-                  src="/logo-san-luis.svg"
+                  src="/LOGO.webp"
                   alt="San Luis – Confitería & Catering"
                   className="h-20 w-auto sm:h-24 lg:h-28"
                 />
