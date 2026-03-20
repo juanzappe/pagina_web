@@ -42,7 +42,7 @@ body::before {
   }
 
   .section-card {
-    @apply border border-forest/8 p-6 backdrop-blur-sm transition duration-300 sm:p-8;
+    @apply border border-forest/10 p-6 backdrop-blur-sm transition duration-300 sm:p-8;
     border-radius: 2rem;
     background-color: rgb(255 255 255 / 0.85);
     box-shadow:
