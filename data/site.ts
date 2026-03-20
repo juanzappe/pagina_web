@@ -316,40 +316,34 @@ export const decoracionFeatures = [
 
 export const googleReviews = [
   {
-    name: 'María Laura G.',
+    name: 'Cliente verificado',
     rating: 5,
-    text: 'Las medialunas son las mejores de La Plata, no exagero. Vamos todos los sábados con mi familia y siempre salimos contentos. La atención es de primera.',
-    timeAgo: 'Hace 2 meses',
+    text: 'La San Luis es una confitería excelente. Salones hermosamente ambientados, muy cómodos y luminosos. Terraza recomendable. Comida de muy buena calidad, facturas enormes. Relación precio-calidad buenísima.',
   },
   {
-    name: 'Sebastián R.',
+    name: 'Cliente verificado',
     rating: 5,
-    text: 'Pedimos catering para un evento de la empresa y fue impecable. Llegó todo a tiempo, muy bien presentado y la comida riquísima. Súper recomendable.',
-    timeAgo: 'Hace 3 meses',
+    text: 'Hablamos con su dueño, Fabián, para el catering de nuestro casamiento. Fue un placer organizarlo con él. Práctico, resolutivo y dándonos la confianza necesaria para dejarlo en sus manos.',
   },
   {
-    name: 'Carolina M.',
+    name: 'Cliente verificado',
     rating: 5,
-    text: 'Un lugar hermoso para merendar. La terraza es un sueño, la pastelería artesanal increíble y los precios muy razonables para la calidad que ofrecen.',
-    timeAgo: 'Hace 1 mes',
+    text: 'Excelente opción para disfrutar solo, con pareja, con amigos o en familia. Posee una terraza con moderada música y excelente vista. Productos exquisitos y atención esmerada.',
   },
   {
-    name: 'Martín P.',
+    name: 'Cliente verificado',
     rating: 5,
-    text: 'Almorcé el plato del día y quedé sorprendido. Comida casera de verdad, abundante y con una presentación que no esperás para ese precio. Vuelvo seguro.',
-    timeAgo: 'Hace 2 semanas',
+    text: 'La Panadería y Confitería San Luis abrió un salón arriba. Es muy bonito y a eso hay que agregarle la calidad de sus productos. Las masas hojaldradas, una delicia. Y la atención, como siempre, impecable.',
   },
   {
-    name: 'Luciana T.',
+    name: 'Cliente verificado',
     rating: 5,
-    text: 'Encargué sándwiches de miga para un cumpleaños y fueron un éxito total. Frescos, variados y con ingredientes de calidad. Ya los pedí tres veces más.',
-    timeAgo: 'Hace 4 meses',
+    text: 'Excelente servicio!! Los conozco desde el servicio de mi casamiento, el de mi hermana y el bautismo de mi sobrina. ¡Geniales!',
   },
   {
-    name: 'Fernando D.',
+    name: 'Cliente verificado',
     rating: 5,
-    text: 'Conozco San Luis desde que era chico y sigue manteniendo la misma calidad de siempre. Es un clásico platense que no defrauda. La atención siempre cálida y familiar.',
-    timeAgo: 'Hace 1 mes',
+    text: 'Excelente servicio y buenos precios, se nota la calidad de los productos ni bien los probás. Mucha variedad y muy buena atención.',
   },
 ];
 

@@ -316,10 +316,7 @@ export default function HomePage() {
                 ))}
               </div>
               <p className="mt-3 text-sm leading-6 text-ink/80">&ldquo;{review.text}&rdquo;</p>
-              <div className="mt-4 flex items-center justify-between">
-                <p className="text-sm font-semibold text-forest">{review.name}</p>
-                <p className="text-xs text-ink/50">{review.timeAgo}</p>
-              </div>
+              <p className="mt-4 text-sm font-semibold text-forest">{review.name}</p>
             </article>
           ))}
         </div>
