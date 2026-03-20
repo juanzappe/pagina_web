@@ -9,6 +9,7 @@ export const siteInfo = {
   neighborhood: 'Ubicados en una esquina tradicional de La Plata, con salón, terraza y mostrador para llevar.',
   whatsapp: '+54 221 357-0076',
   whatsappUrl: 'https://wa.me/542213570076?text=Hola%20Confiter%C3%ADa%20San%20Luis%2C%20quiero%20hacer%20una%20consulta.',
+  email: 'confiteriasanluis@gmail.com',
   instagram: '@confiteriasanluislp',
   instagramUrl: 'https://instagram.com/confiteriasanluislp',
   mapsUrl: 'https://maps.google.com/?q=Confiter%C3%ADa+San+Luis+La+Plata',
@@ -350,5 +351,6 @@ export const googleReviews = [
 export const contactHighlights = [
   'Atención por WhatsApp para reservas, pedidos y eventos.',
   'Instagram activo para novedades, bandejas y propuestas del día.',
+  'Email disponible para consultas formales, presupuestos y eventos corporativos.',
   'Zona accesible de La Plata para desayunar, almorzar o retirar pedidos.',
 ];
